@@ -1,0 +1,37 @@
+\section{Schaltungselemente in CMOS\skript{Kap. 4}}
+
+\subsection{Kapazitäten}
+Es gibt im wesentlichen drei unterschiedliche Arten von Kapazitäten, welche in einem CMOS-Chip realisiert werden können: 
+Poly-Poly-Kapazität ($C'' \approx 1fF/\mu m^2$),
+MOS-Kapazität ($C'' \approx 10fF/\mu m^2$),
+MIM-Kapazität (Metall-Isolator-Metall, $C'' \approx 1fF/\mu m^2$). $C''$ bezeichnet dabei die spezifische Kapazität pro Flächeneinheit.
+Der Plattenabstand $d$ ist meist durch die Herstellung gegeben.
+
+\begin{tabularx}{\linewidth}{|l|X|}
+	\hline
+	Elektrische Feldkonstante	& $\epsilon_0 = 8.85 \cdot 10^{-12} F/m$
+	\\ \hline
+	Kapazität/Fläche	& $C'' = \cfrac{\epsilon}{d} = \cfrac{\epsilon_0 \epsilon_r}{d}$
+	\\ \hline
+	Kapazität & $C = C'' \cdot A$
+	\\ \hline
+\end{tabularx}
+
+\subsection{Widerstände}
+Widerstände in CMOS sind meist unerwünscht da sie viel Platz brauchen und viel Wärme entsteht. Sollte trotzdem ein
+Widerstand erforderlich sein, so lässt so ist er über seine Breite und Länge zu definieren:
+\[
+	R = R_\diamond \frac{L}{W}
+\]
+
+\begin{tabularx}{0.8\linewidth}{|l|l|X|l|l|}
+	\hline
+	\multicolumn{5}{|c|}{\textbf{Typische Werte für Widerstände}}
+	\\ \hline
+	Poly-Widerstand & $R \approx 10 \Omega/\diamond$ & & HR-Poly-Widerstand & $R \approx 1k\Omega/\diamond$
+	\\ \hline
+	P-Diffusions-Widerstand & $R \approx 100\Omega/\diamond$ & & N-Diffusions-Widerstand & $R \approx 100\Omega/\diamond$
+	\\ \hline
+	N-Well-Widerstand & $R \approx 1k\Omega/\diamond$ & & &
+	\\ \hline
+\end{tabularx}
