@@ -8,7 +8,11 @@
 	\\ \hline
 	$V_{DS,sat}$	& Sättigungsspannung	&
 	\\ \hline
-	$V_A$			& Early-Spannung		&
+	$a_A$			& Early-Faktor			&
+	\\ \hline
+	$\lambda$		& Kanallängen Modulationsfaktor & $\lambda = \frac{1}{V_A}$ 
+	\\ \hline
+	$V_A$			& Early-Spannung		& $V_A \approx a_A \cdot L$
 	\\ \hline
 	$\Phi_t$		& Temperaturspannung	& $\Phi_t = V_{temp} = \frac{kT}{e} \quad k = 1.38 \cdot 10^{23} J/K \quad e=1.6 \cdot 10^{-19} C$
 	\\ \hline
@@ -47,3 +51,95 @@ Andere Bezeichnungen: differentieller- , Kleinsignal-, dynamischer Ausgangswider
 	r_{DS} = \frac{1}{g_0} = \frac{dV_{DS}}{dI_{D}} \approx \frac{\Delta V_{DS}}{\Delta I_D}
 \]
 
+
+\subsection{Transferkennlinie}
+
+TODO: Abbildung wie Skript S.44 schweissen.
+
+\subsection{Drainstromgleichungen}
+\begin{tabular}{|l|l|l|}
+	\hline
+		\textbf{Ausgangsstrom} 
+		& \multicolumn{2}{c|}{\textbf{Ausgangsspannungsbereich} ($V_{DS}$-Bereich)}
+	\\
+		($I_D-, V_{GS}$-Bereich)
+		& Transistor ungesättigt ($V_{DS} < V_{DS,sat}$)
+		& Transistor gesättigt ($V_{DS} > V_{DS,sat}$)
+	\\ \hline
+		\multicolumn{3}{|c|}{\textbf{n-Kanal ohne Kanallängenmodulation und ohne unterschiedlicher Transkonduktanz:}}
+	\\ \hline
+		EXP-Bereich
+		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}} (1-e^{\frac{-V_{DS}}{\Phi_t}})$
+		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}}$
+	\\ \hline
+		QUAD-Bereich
+		& $I_D = \beta [(V_{GS} - V_T) V_{DS} - \frac{V_{DS}^2}{2}]$
+		& $I_D = \frac{\beta}{2}(V_{GS} - V_T)^2$
+	\\ \hline
+		\multicolumn{3}{|c|}{\textbf{n-Kanal mit Kanallängenmodulation und mit unterschiedlicher Transkonduktanz:}}
+	\\ \hline
+		EXP-Bereich
+		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}} (1-e^{\frac{-V_{DS}}{\Phi_t}}) (1 + \lambda V_{DS})$
+		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}} (1 + \lambda V_{DS})$
+	\\ \hline
+		QUAD-Bereich
+		& $I_D = B [(V_{GS} - V_T) V_{DS} - \frac{V_{DS}^2}{2}] (1 + \lambda V_{DS})$
+		& $I_D = \frac{\beta}{2}(V_{GS} - V_T)^2 (1 + \lambda V_{DS})$
+	\\ \hline
+		\multicolumn{3}{|c|}{\textbf{p-Kanal mit Kanallängenmodulation und mit unterschiedlicher Transkonduktanz:}}
+	\\ \hline
+		EXP-Bereich
+		& $I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}} (1-e^{\frac{-V_{DS}}{\Phi_t}}) (1 - \lambda V_{DS})$
+		& $I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}} (1 - \lambda V_{DS})$
+	\\ \hline
+		QUAD-Bereich
+		& $I_D = -B [(V_{GS} - V_T) V_{DS} - \frac{V_{DS}^2}{2}] (1 - \lambda V_{DS})$
+		& $I_D = -\frac{\beta}{2}(V_{GS} - V_T)^2 (1 - \lambda V_{DS})$
+	\\ \hline
+\end{tabular}
+\newline
+
+Die Sättigungsspannung beträgt im \textbf{EXP-Bereich} $5\Phi_t$, im \textbf{QUAD-Bereich} $V_{GS}-V_T$.
+
+Parameter der Gleichungen:
+
+\begin{tabularx}{\linewidth}{|l|l|X|}
+	\hline
+		$V_T$ & Schwellenspannung &
+		Typisch $0.6V$ beim n-Kanal, resp. $-0.6V$ beim p-Kanal. $V_T$ ist stark von der Source-Bulk-Spannung abhängig (Body-Effekt):
+		\[ 
+			V_T = V_{T0} \pm \Delta V_T \quad \text{mit} \quad \Delta V_T = \gamma(\sqrt{V_SB \pm \Phi_0} -\sqrt{\Phi_0})
+		\]
+		positives Vorzeichen für n-Kanal, negatives für p-Kanal, $\gamma_N \approx 0.6\sqrt{V}$, $\gamma_P \approx 0.5\sqrt{V}$ 
+	\\ \hline
+		$\Phi_t$ & Temperaturspannung &
+		\[
+			\Phi_t = V_{Temp} = \frac{kT}{e} = 86.2 \frac{\mu V}{K}T
+		\]
+		somit ist $\Phi_t = 25.9mV$ bei $T=300^\circ K$ bzw. $27^\circ C$
+	\\ \hline
+		$I_M$ & Drainstrom &
+		Drainstrom an der Grenze zwischen schwacher und moderater Inversion.
+		\[
+			I_M = \frac{W}{L} \cdot I_M'
+		\]
+		$I_M'$ ist der spezifische Drainstrom an der Grenze
+	\\ \hline
+		$n_M$ & Unterschwellen-Neigungsfaktor &
+		Der Faktor $n_m$ ist von der Source-Bulk-Spannung $V_{SB}$ abhängig:
+		\[
+			n_M = 1 + \frac{\gamma}{2 \sqrt{V_{SB} + \Phi_0}}
+		\]
+		Für $V_{SB} = 0$ erhalten wir $n_M=1.39$. Häufig wird ein Wert von $n_M \approx 1.5$ angegeben.
+	\\ \hline
+		$\lambda$ & Kanallängen-Modulationsfaktor &
+		inverser Wert der Early-Spannung
+		\[
+			\lambda = \frac{1}{V_A} \approx \frac{1}{a_A L}
+		\]
+		Der MOS-Transistor wird vielfach mit $\lambda = 0$ idealisiert, was die Handrechnung vereinfacht.
+	\\ \hline
+		$B, \beta$ & Transkondukdanz &
+		Steilheit, Verstärkungsfaktor. Dieser Faktor ist im gesättigten und ungesättigten Betrieb \textbf{grundsätzlich verschieden}.
+	\\ \hline
+\end{tabularx}
