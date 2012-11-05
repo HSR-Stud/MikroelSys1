@@ -1,4 +1,4 @@
-\section{MOS Stromspiegel\skript{Kap. 9.1}}
+\section{MOS Stromspiegel\skript{Kap. 9}}
 Ziel: Aus einer einzelnen genauen Strom- oder Spannungsquelle verschiedene genaue Ströme erzeugen.
 
 \begin{tabularx}{\linewidth}{|l|l|X|}
@@ -6,3 +6,37 @@ Ziel: Aus einer einzelnen genauen Strom- oder Spannungsquelle verschiedene genau
 	Stromspiegelverhältnis & $n_m$ & $n_m = \frac{I_0}{I_i} = \frac{(\frac{W}{L})_{out}}{(\frac{W}{L})_{in}} \approx \frac{i_0}{i_i}$
 	\\ \hline
 \end{tabularx}
+
+\subsection{Die wichtigsten Formeln}
+\begin{multicols}{2}
+	\textbf{Stromspiegelverhältnis}
+	\[
+		n_m = \frac{I_o}{I_i} 
+			= \frac{\left(\frac{W}{L}\right)_o}{\left(\frac{W}{L}\right)_i}
+			= \frac{I_{Do}}{I_{Di}}
+	\]
+	\columnbreak
+		
+	\textbf{Berechnung Ausgangsstrom}
+	\[
+		I_{out} = I_{in}\cdot\frac{W_{T_{out}}}{W_{T_{in}}}
+	\]
+	gilt nur wenn $L_{T_{out}} = L_{T_{in}}$
+\end{multicols}
+
+
+\begin{tabular}{|l|c|l|l|l|}
+	\hline
+	\textbf{Stromspiegeltyp} & \textbf{Genauigkeit} & \boldmath{$r_{out}$} & \boldmath{$V_I$} & \boldmath{$V_{O,min}$}
+	\\ \hline
+	Widlar Stromspiegel		& $+$	& $= \frac{1}{g_0}$								& $\approx V_T + \sqrt{\frac{2I_I}{\beta}}$		& $\approx \sqrt{\frac{2I_0}{\beta}}$
+	\\ \hline
+	Wilson Stromspiegel		& $+$	& $\approx \frac{1}{g_0}(2 + \frac{g_m}{g_0})$	& $\approx 2V_T + 2\sqrt{\frac{2I_I}{\beta}}$	& $\approx V_T + 2\sqrt{\frac{2I_0}{\beta}}$
+	\\ \hline
+	Verbesserter Wilson		& $++$	& $\approx \frac{1}{g_0}(2 + \frac{g_m}{g_0})$	& $\approx 2V_T + 2\sqrt{\frac{2I_I}{\beta}}$	& $\approx V_T + 2\sqrt{\frac{2I_0}{\beta}}$
+	\\ \hline
+	Kaskode-Stromspiegel	& $++$	& $\approx \frac{1}{g_0}(2 + \frac{g_m}{g_0})$	& $\approx 2V_T + 2\sqrt{\frac{2I_I}{\beta}}$	& $\approx V_T + 2\sqrt{\frac{2I_0}{\beta}}$
+	\\ \hline
+	geregelte Kaskode		& $++$	& $\approx \frac{1}{g_0}(\frac{g_m}{g_0})^2$	& $\approx V_T + \sqrt{\frac{2I_I}{\beta}}$		& $\approx 2\sqrt{\frac{2I_0}{\beta}}$
+	\\ \hline
+\end{tabular}
