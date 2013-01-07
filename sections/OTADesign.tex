@@ -1,0 +1,29 @@
+\section{Designprojekt OTA}
+Vorgaben:
+\begin{description}[noitemsep, leftmargin=4.2cm, style=sameline]
+  \item[Open-Loop-Gain:] $\geq 80 dB$
+  \item[Last:] $\leq 5 pF$
+  \item[GBW:] $\geq 5 MHz$
+  \item[Phase Margin:] $\geq 60^\circ$
+  \item[Stabilität:] Unity-Gain stable
+  \item[Slew-Rate:] $\geq 20V/\mu S$
+  \item[Versorgungsspannung:] $3.3V$
+  \item[Output-Swing:] (VSS + 500mV) \ldots (VDD-500mV)
+\end{description}
+
+\subsection{Design Ablauf}
+OTA wird typischerweise ein Sub-Block einer grösseren Schaltung sein.
+
+\begin{enumerate}[noitemsep]
+  \item Definition der Ein- und Ausgägne einer Schaltung (Spezifikation der Schaltung)
+  \item Handberechnung, Erstellung des Schaltplanes
+  \item Schaltkreissimulation
+  \item Erfüllt der Schaltkreis die Spezifikation? Wenn nein, zurück zu 1. Sonst weiter.
+  \item Layout
+  \item Schaltkreissimulation mit parasitären Einflüssen
+  \item Erfüllt der Schaltkreis die Spezifikationen? Nein: Zurück zu Layout, sonst weiter.
+  \item Herstellung eines Prototypen
+  \item Test und Evaluation
+  \item Erfüllt der Schaltkreis die Spezifikation? Nein: Zurück zur Herstellung Prototyp oder zurück zu 1.
+  \item Produktion
+\end{enumerate}
