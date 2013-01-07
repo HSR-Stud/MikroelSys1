@@ -1,0 +1,12 @@
+\begin{circuitikz}[scale=0.5, transform shape, european]
+\ctikzset{tripoles/mos style/arrows}
+
+\draw (1.5,3) node[nmos] (nmos) {}
+	(nmos.G) to (0,3) to [V_=VG] (0,0) node[ground] {}
+	(nmos.S) to [R=RS] (1.5,0) node[ground] {}
+	(nmos.D) to [R=RL,i<_=ID] (1.5,5.5) node[ocirc] {}
+;
+\draw [->] (2.5,3.5) -- (2.5,0);
+\draw node at (2.5,1.75) [anchor=west] {Vo};
+\draw node at (1.5,5.5) [anchor=south] {VDD=V+};
+\end{circuitikz}

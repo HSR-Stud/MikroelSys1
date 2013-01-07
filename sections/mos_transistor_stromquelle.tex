@@ -1,0 +1,41 @@
+\section{MOS-Transistor als Stromquelle}
+\subsection{Strom einer MOS Stromquelle}
+$I_D=\frac{\beta}{2}\left(V_{GS}-V_T\right)^2\left(1+\lambda V_{DS}\right)
+\approx \frac{\beta}{2}\left(V_{GS}-V_T\right)^2 $
+\subsection{Sättigungsspannung}
+\textbf{Bei starker Inversion}
+$V_{DS,sat}=V_{GS}-V_t=\sqrt{\frac{2I_d}{\beta}}$\\
+\textbf{Bei schwacher Inversion} $V_{DS,sat}\approx 5 \Phi_t \approx 130mV$
+
+\begin{sidewaystable}
+\begin{tabular}{|l|p{2.2cm}|p{8cm}|p{6cm}|}
+\hline
+Schaltung & Konfiguration & Ausganswiderstand $r_0$ & Minimale Ausgangsspannung
+$V_{0,min}$ \\
+\hline
+\input{tikz/einfache_stromquelle.tex} &
+Einfache Quelle mit 1 Transistor &
+$r_{out}=r_{iD}=r_{DS}=\frac{1}{g_0}=\frac{V_A+V_{DS}}{I_D}\approx\frac{V_A}{I_D}$ &
+$V_0 > V_{0,min} = V_{DS,sat}$ \\
+\hline
+
+ & Stromquelle mit Source-Widerstand &
+$r_{iD}=r_{DS}\left(1+\frac{R_S}{r_S}+\frac{R_S}{r_{DS}}\right)=\frac{1}{g_0}\left(1+g_mR_S\right)+R_S$
+& $V_0 > V_{0,min} = R_SI_D+V_{DS,sat}$
+\\
+\hline
+\input{tikz/stromquelle_kaskode.tex} & Stromquelle mit Kaskode &
+$r_{out}=r_{o2}\approx\frac{r_{DS}^2}{r_{S2}}=\left(\frac{r_{DS}}{r_S}\right)r_{DS}=\mu\cdot
+r_{DS}=\frac{1}{g_{o1}}\cdot\frac{g_{m2}}{g_{o2}}$ & 
+$V_{0,min}=V_{G2}-V_{GS2}+V_{DS2,sat}$\newline$V_{0,min}=V_{DS1,sat}+V_{DS2,sat}$\newline$
+\left(\text{, bei } V_{G2}=V_{DS1,sat}+V_{GS2}\right)$\\
+ \hline \input{tikz/stromquelle_kaskode_geregelt.tex} & Stromquelle mit
+ geregelter Kaskode &$r_{out} \approx
+r_{DS1}\cdot\frac{r_{DS2}}{r_{S2}}\cdot\frac{r_{DS3}}{r_{S3}}=\frac{1}{g_{o1}}\cdot\frac{g_{m2}}{g_{o2}}\cdot\frac{g_{m3}}{g_{o3}}
+$ &$V_{O,min}=2V_{DS,sat}$
+\\
+\hline
+
+
+\end{tabular}
+\end{sidewaystable}

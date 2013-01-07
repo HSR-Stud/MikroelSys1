@@ -1,0 +1,21 @@
+\begin{circuitikz}[scale=0.5, transform shape, european]
+\ctikzset{tripoles/mos style/arrows}
+
+\draw (3,2) node[nmos] (M1) {}
+	(3,4) node [nmos] (M2) {}
+	(M1.D) -- (M2.S)
+	(M2.D) to [R=RL] (3,6.5) node [ocirc] {}
+	(M1.S) to [R=RS] (3,0) node [ground] {}
+	(M2.G) to (0,4) to [V=VG2] (0,0) node [ground] {}
+	(M1.G) to (1.4,2) to [V=VG1] (1.4,0) node [ground] {}
+;
+\draw (3.2,4.7) -- (5.5,4.7);
+\draw (3.2,2.7) -- (4.5,2.7);
+\draw node at (4,5.5) {ro2};
+\draw [->] (4,5.3) -- (4,4.7);
+\draw node at (4,3.5) {ro2};
+\draw [->] (4,3.3) -- (4,2.7);
+\draw [->] (5.2,4.5) -- (5.2,0);
+\draw node at (5.2,2.25) [anchor=west] {Vo};
+
+\end{circuitikz}

@@ -1,0 +1,31 @@
+\begin{circuitikz}[scale=0.5, transform shape, american]
+\ctikzset{tripoles/mos style/arrows}
+
+\draw
+	(4,1) node [nmos] (M1) {}
+	(2,2) node [nmos, scale=-1] (M3) {}
+	(4,3) node [nmos] (M2) {}
+	
+	(M1.S) to (4,0) node [ground] {}
+	(M1.G) to (0.5,1) node [ocirc] {}
+	(M1.D) to (M2.S)
+	
+	(M2.G) to (2,3) node [circ] {}
+	(M2.D) to (4,4) node [ocirc] {}
+	
+	(M3.D) to (2,0) node [ground] {}
+	(M3.G) to (4,2) node [circ] {}
+	(2,4.5) node [ocirc] {} to [I=IQ] (M3.S)
+	(0.5,0) node [ground] {}
+;
+\draw node at (4,1) [anchor=west] {M1};
+\draw node at (2,2) [anchor=east] {M2};
+\draw node at (4,3) [anchor=west] {M3};
+\draw [->] (0.5,1) -- (0.5,0);
+\draw node at (0,0.5) {Vi};
+\draw [->] (4,5) -- (4,4);
+\draw node at (4,4.5) {ID};
+\draw [->] (5,4) -- (5,0) {};
+\draw node at (5,2) [anchor=west] {Vo};
+
+\end{circuitikz}
