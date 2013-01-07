@@ -99,6 +99,44 @@ Andere Bezeichnungen: differentieller- , Kleinsignal-, dynamischer Ausgangswider
 
 \end{tikzpicture}
 
+\setArrayStretch{1.2}
+\begin{tabular}{|lp{3cm}|p{6cm}|p{8cm}|}
+	\hline
+	& \textbf{Ausgangs\-strom\-bereich} & \textbf{Mathematische Charakterisierung} & \textbf{Zugrundeliegender physikalischer Effekt}
+	\\ \hline
+	\cellcolor{red!70}
+	0 
+	& Leckstrombereich (LECK) 
+	& $I_D$ erreicht Minimalwert, der nicht weiter unterschritten werden kann
+	& Drain-Substratdiode und Source-Substratdiode haben Leckströme im Substrat
+	\\ \hline
+	\cellcolor{yellow!70}
+	1
+	& Exponentieller Bereich (EXP)
+	& $I_D$ steigt exponentiell mit $V_{GS}$
+	& Kanal zeigt schwache Inversion (Beim n-Kanal-Transistor: Ursprünglich p-leitender Kanal ist schwach n-leitend)
+	\\ \hline
+	\cellcolor{orange!70}
+	2
+	& Schwellen Bereich (MOD)
+	& Keine "`handlichen"' Formel für $I_D$ vorhanden
+	& Kanal zeigt moderate Inversion (Kanalzustand liegt zwischen schwacher und starker Inversion)
+	\\ \hline
+	\cellcolor{green!70}
+	3
+	& Quadratischer Bereich (QUAD)
+	& $I_D$ steigt quadratisch mit $V_{GS}$
+	& Kanal zeigt starke Inversion (Beim n-Kanal-Transistor: Ursprünglich p-leitender Kanal wirk stark n-leitend)
+	\\ \hline
+	\cellcolor{blue!70}
+	4
+	& Linearer Bereich (LIN)
+	& $I_D$ steigt annähernd linear mit $V_{GS}$ (halb QUAD, halb LIN)
+	& Geschwindigkeitsänderung der Ladungsträger im Kanal (die Ladungsträger können nicht weiter beschleunigt werden)
+	\\ \hline
+\end{tabular}
+\resetArrayStretch
+
 \subsection{Drainstromgleichungen}
 \begin{tabular}{|l|l|l|}
 	\hline
