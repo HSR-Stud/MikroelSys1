@@ -3,6 +3,8 @@
 \input{header/zusammenfassung}
 \input{header/hyperref}
 \usepackage{multicol}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage{tikz}
 \usepackage{rotating}
 \usepackage{circuitikz}
@@ -13,10 +15,10 @@
 \author{Jürg Rast}
 
 \begin{document}
-\begin{titlepage}
-	\thispagestyle{empty}
-	\maketitle
-\end{titlepage}
+% \begin{titlepage}
+% 	\thispagestyle{empty}
+% 	\maketitle
+% \end{titlepage}
 
 \tableofcontents
 \newpage
@@ -29,7 +31,7 @@
 
 \section{Grundschaltungen mit MOS-Transistoren}
 
-\section{MOS-Diode}
+\input{sections/mos_diode}
 
 \input{sections/mos_transistor_stromquelle}
 
@@ -43,8 +45,8 @@
 
 \section{Stabilität von MOS Operationsverstärker}
 
-\section{Gebräuchliche Realisierungen von OTA's}
-\input{sections/OTADesign.tex}
+%\section{Gebräuchliche Realisierungen von OTA's}
+%\input{sections/OTADesign.tex}
 
 \section{Spannungsreferenzen}
 \end{document}

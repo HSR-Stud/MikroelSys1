@@ -1,0 +1,8 @@
+\begin{circuitikz}[american, european resistors]
+	\draw (4,0) node[circ, name=D] {} node[right] {D};
+	\draw (4,-2) node[circ, name=S] {} node[right] {S};
+	\draw (1.5,-2) -- (S);
+	\draw (3,0) to[R=$\frac{1}{g_0}$] +(0,-2);
+	\draw (3,0) -- (1.5,0) to[R=$\frac{1}{g_m}$] +(0,-2);
+	\draw (D) to[short, i_=$i_D$] +(-1,0);
+\end{circuitikz}
