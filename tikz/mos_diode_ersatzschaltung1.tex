@@ -1,0 +1,11 @@
+\begin{circuitikz}[american, european resistors]
+	\draw (0,0) node[circ, name=G] {} node[left] {G};
+	\draw (4,0) node[circ, name=D] {} node[right] {D};
+	\draw (4,-2) node[circ, name=S] {} node[right] {S};
+	\draw (0,-2) -- (S);
+	\draw (G) -- +(3,0);
+	\draw (3,0) to[R=$\frac{1}{g_0}$] +(0,-2);
+	\draw (2,0) to[I_=$g_m v_{GS}$] +(0,-2);
+	\draw (D) to[short, i_=$i_D$] +(-1,0);
+	\draw[->, thick] (0, -0.2) -- +(0,-1.6) node[midway, left] {$v_{GS}$};
+\end{circuitikz}

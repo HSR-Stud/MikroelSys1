@@ -1,0 +1,7 @@
+\begin{circuitikz}[european voltages]
+	\ctikzset{tripoles/mos style/arrows}
+	\draw (0,-1) to[Tnmos, n=n1] (0,0);
+	\draw (n1.source) to[short, i=$I_D$] (0,-2);
+	\draw (n1.gate) |- (n1.drain) -- +(0,0.5);
+	\draw[->, thick] (-1.2,0.5) -- (-1.2,-1.5) node[midway, left] {$V_{GS}$};
+\end{circuitikz}

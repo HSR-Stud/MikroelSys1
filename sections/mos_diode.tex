@@ -1,0 +1,67 @@
+\section{MOS-Diode}
+Für Kennlinien der MOS-Dioden siehe Abbildung \ref{fig:diodenKennlinien}.
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{5cm}
+		\centering
+		{\input{tikz/diode_ideal}}
+		\caption{Ideale Diode ($V_F = V_{F0}$)}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\centering
+		{\input{tikz/diode_ideal}}
+		\caption{Reale Diode}
+	\end{subfigure} \quad
+	\begin{subfigure}[b]{4cm}
+		\centering
+		{\input{tikz/diode_nmos}}
+		\caption{n-Kanal}
+	\end{subfigure}
+	\begin{subfigure}[b]{4cm}
+		\centering
+		{\input{tikz/diode_pmos}}
+		\caption{p-Kanal}
+	\end{subfigure}
+	\hspace{1.5cm}
+	
+	\begin{subfigure}[b]{4cm}
+		{\input{tikz/kennlinie_diode_ideal}}
+	\end{subfigure} \quad
+	\begin{subfigure}[b]{4cm}
+		\centering
+		{\input{tikz/kennlinie_diode_real}}
+	\end{subfigure} \qquad
+	\begin{subfigure}[b]{8cm}
+		\centering
+		{\input{tikz/kennlinie_diode_mos}}
+	\end{subfigure}			
+	\caption{Gegenüberstellung Dioden-Kennlinien}
+	\label{fig:diodenKennlinien}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{5cm}
+		\centering
+		{\input{tikz/mos_diode_ersatzschaltung1}}
+	\end{subfigure} \qquad\qquad
+	\begin{subfigure}[b]{3cm}
+		\centering
+		{\input{tikz/mos_diode_ersatzschaltung2}}
+	\end{subfigure}
+	\caption{Ersatzschaltungen der MOS-Diode}
+\end{figure}
+
+\begin{tabular}{|l|l|}
+	\hline
+	Arbeitspunktstrom einer MOS-Diode mit Wiederstandslast $R_D$
+	& $I_D = \frac{\beta}{2} (V_{GS} -V_T)^2 = \frac{V^+ - V_{GS}}{R_D} $
+	\\ \hline
+	Drain-Source Spannung einer MOS-Diode bei gegebenem Strom
+	& $ V_{GS} = V_T + \sqrt{\frac{2I_D}{\beta(1+\lambda V_{DS})}} \approx V_T + \sqrt{\frac{2I_D}{\beta}} $
+	\\ \hline
+	Innenwiderstand der MOS-Diode
+	& $ r_{MD} = \frac{v_{GS}}{i_D} = \frac{1}{g_m + g_0} \approx \frac{1}{g_m} $
+	\\ \hline	
+\end{tabular}
+
