@@ -1,0 +1,45 @@
+\begin{tikzpicture}[scale=0.8,transform shape]
+	%axis
+	%x
+	\foreach \x in {0,...,9} {
+		\draw (\x,0) -- (\x,6.4);
+		\draw (\x,6.6) -- (\x,11);
+	}
+	%y
+	\foreach \y in {0,...,11} {
+		\draw (0,\y) -- (9,\y);
+	}
+	\draw node at (0,-0.3) {1};
+	\draw node at (1,-0.3) {10};
+	\draw node at (2,-0.3) {100};
+	\draw node at (3,-0.3) {1k};
+	\draw node at (4,-0.3) {10k};
+	\draw node at (5,-0.3) {100k};
+	\draw node at (6,-0.3) {1M};
+	\draw node at (7,-0.3) {10M};
+	\draw node at (8,-0.3) {100M};
+	\draw node at (9,-0.3) {1G};
+	
+	\draw node at (-0.5,0) {-300};
+	\draw node at (-0.5,1) {-250};
+	\draw node at (-0.5,2) {-200};
+	\draw node at (-0.5,3) {-150};
+	\draw node at (-0.5,4) {-100};
+	\draw node at (-0.5,5) {-50};
+	\draw node at (-0.5,6) {0};
+	\draw node at (-0.5,7) {0};
+	\draw node at (-0.5,8) {20};
+	\draw node at (-0.5,9) {40};
+	\draw node at (-0.5,10) {60};
+	\draw node at (-0.5,11) {80};
+
+\draw [thick, red] plot[smooth, tension=.7] coordinates {(0,6) (1.0379,5.7673) (3.0063,4.4457) (7.2804,3.7427) (8.9957,0.1716)    };
+\draw [thick, green] plot[smooth, tension=.7] coordinates {(0,11) (1.6284,10.9694) (2.697,10.314) (6.0151,7.3983) (7.5335,6.5828) (9.052,6.5547)};
+\draw [dashed] (6.5,11.2) -- (6.5,-0.2);
+\draw [dashed] (8.3,11.2) -- (8.3,-0.2);
+\draw [dashed] (-0.2,2.3) -- (9.2,2.3);
+\draw [dashed] (-0.2,4.1) -- (9.2,4.1);
+\draw [<->] (9.5,4.1) -- (9.5,0);
+\draw node at (9.5,2) [anchor=west] {Phasenmarge};
+\draw node at (6.5,11.2) [anchor=south] {$f_{krit}$};
+\end{tikzpicture}

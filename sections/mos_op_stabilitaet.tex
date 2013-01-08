@@ -1,0 +1,39 @@
+\section{Stabilität von MOS Operationsverstärker}
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}[b]{10cm}
+		\centering
+		{\input{tikz/mos_op_stabilitaet_bode}}
+		\caption{Bodeplot}
+	\end{subfigure}\qquad
+	\begin{subfigure}[b]{8cm}
+		\centering
+		{\input{tikz/rueckgekoppelter_verstaerker}}
+		\caption{Rückgekoppelter Verstärker}
+	\end{subfigure}
+	\caption{Stabilität}
+	\label{fig:stabilitaet}
+\end{figure}
+
+\begin{tabular}{|l|l|}
+\hline
+	Phasenmarge bei $f_{krit}(a_L=1)$ &
+	Verhalten des Verstärkers \\
+	& (System mit zwei weit auseinanderliegenden Polen) \\\hline
+	$\varphi_M \leq 0^\circ$ & 
+	Gegenkoppelter Verstärker schwingt selbständig \\\hline
+	$\varphi_M > 0^\circ$ &
+	Gedämpftes Überschwingen der Sprungantwort \\\hline
+	$\varphi_M = 65^\circ$ &
+	Peaking verschwindet. Einziger Überschwinger mit 4.7\% Sprunghöhe \\\hline
+	$\varphi_M \geq 75^\circ$ &
+	Kein Überschwingen \\\hline
+\end{tabular}
+
+\begin{tabular}{lll}
+Stabilitätskriterien & $\Phi = 180^\circ$ & $ \left|A(s)\cdot F(s)\right|<1 $ \\
+& $ \left|A(s)\cdot F(s)\right|= 1 $ & $ \rightarrow 180^\circ-\Phi>0;\
+\varphi_M>0^\circ $ \\
+Phasenmarge & $\varphi_M=180^\circ-\Phi $ & \\
+Designregel & Wähle 2. Pol ($f_nd$) bei ca. $3\cdot GBP$& \\
+\end{tabular}
