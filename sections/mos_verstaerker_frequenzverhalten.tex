@@ -1,0 +1,36 @@
+\section{Frequenzverhalten von MOS Verstärker}
+Jeder Knoten N bildet einen Pol bei der Frequenz
+$f_N=\frac{1}{2\pi\cdot R_NC_N}$\\
+Grobe Analyse: die Knoten mit hohen RC-Produkten suchen. Dort entstehen
+Systempole, welche einen Abfall von 20dB/Dekade im Frequenzgang einleiten.
+\subsection{Widerstände}
+\begin{tabular}{lll}
+	Knotenimpedanz praktisch unendlich & $r_{iG}\rightarrow\infty$ & Gate \\
+	Knotenimpedanz sehr hoch & $r_{ds}=\frac{1}{g_0}$ & Drain des Transistors wenn
+	als Stromquelle beschaltet\\
+	Knotenimpedanz tief & $\frac{1}{g_m}$ & Drain des Transistors in
+	Diodenschaltung \\
+	& & Source des Transistors in Stromquellenschaltung \\
+\end{tabular}
+\subsection{Kapazitäten}
+\begin{tabular}{p{4cm}p{14cm}}
+	Knotenkapazität gross & C als passive Schaltungskomponente \\
+	Knotenkapazität mittel & parasitäre Kapazität verstärkt durch Miller-Effekt.
+	Häufig $C_{GD}$ eines verstärkenden Transistors\\
+	Knotenkapazität klein & Knoten mit parasitären Kapazitäten. In der Regel beim
+	Gate-Knoten am höchsten.
+\end{tabular}
+\subsection{Millerkapazität}
+Die Miller Kapazität $C_M$ zwischen Ein- und ausgang eines Verstärkers mit
+Verstärker A liegt, erscheint:\\
+multipliziert mit ($1-A$) parallel zum Eingang ($C_{MI}$)\\
+multipliziert mit ($1-\frac{1}{A}$) parallel zum Ausbang ($C_{MO}$)\\
+$C_M$ wird aus dem Schema entfernt\\
+\subsection{Darstellung}
+\begin{enumerate}
+  \item DC Verstärkung berechnen (aus Kleinsignalersatzschaltung für
+  Niederfrequenz)
+  \item Die relevanten Pole finden (An welchem Knoten befindet sich ein hohes
+  RC Produkt)
+  \item Pole in Bode-Diagramm einzeichnen
+\end{enumerate}
