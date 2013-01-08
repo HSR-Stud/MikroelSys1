@@ -1,0 +1,22 @@
+\begin{circuitikz}[american, european resistors]
+\ctikzset{tripoles/mos style/arrows}
+
+\draw
+	(2,2) node [nmos] (M1) {}
+	(4,2) node [nmos, xscale=-1] (M2) {}
+	
+	(M1.S) to (M2.S)
+	(M1.G) to (0.5,2) node [ocirc] {Vi1}
+	(2,3) to (M1.D)
+	
+	(M2.G) to (5.5,2) to (5.5,1) to (0.5,1) node [ocirc] {Vi2}
+	(4,3) to (M2.D)
+	
+	(5.5,4.5) node [ocirc] {V+} to (3,4.5) to (3,4)
+	(1,4) rectangle (5,3)
+	(3,1.25) node [circ] {} to [I] (3,-0.5) to (5.5,-0.5) node [ocirc] {V-}
+	(3,3.5) node {1:1}
+	(4,2.7) to [short, i<_=iout] (6,2.7) node [ocirc] {}
+;
+
+\end{circuitikz}
