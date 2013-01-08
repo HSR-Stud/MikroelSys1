@@ -1,0 +1,33 @@
+\section{MOS Operationsverstärker}
+
+\subsection{Struktur}
+\begin{tabular}{p{3cm}p{15cm}}
+	Differenzstufe (Eingangsstufe) & bildet die Differenz der Eingangssignale,
+	verstärkt sie mit dem Differenz-Verstärkungsfaktor\\
+	Verstärkungsstufe	(Integratorstufe) & Verstärkerstufe, erhöht die
+	Gesamtverstärkung. Bestimmt meist die Gesamtbandbreite des
+	Operationsverstärkers\\
+	Leistungsstufe (Ausgangsstufe) & Impedanzwandler. Verstärkung ist selten
+	grösser als eins. Verkleinert den Ausgangswiderstand und stellt genügend
+	Ausgansstrom zur verfügung\\
+\end{tabular}
+
+\subsection{Die wichtigsten Formeln}
+\begin{tabular}{p{7cm}p{11cm}}
+Verstärkung Differenzstufe &
+\textbf{Bei Widerstandslast} $i_{out}=-\frac{g_mv_d}{2}$
+$a\approx\frac{g_m\cdot r_{out}}{2}$ \newline
+\textbf{Bei Stromspiegellast} $i_{out}=-g_mv_d$ $a\approx g_m\cdot r_{out}$
+\\
+Grenzwert bei starker Inversion & $a=V_A\sqrt{\frac{\beta}{I_Q}}$ (Bedingung:
+$a_{E_N}=a_{E_P}$)\\
+Grenzwert bei schwacher Inversion & $a=\frac{V_A}{2n_M\Phi_t}$\\
+Gain-Bandwith-Product & $GBP=|a|\cdot f_{P1}$ \\
+Slew-Rate & $SR=\frac{dv_o}{dt}=\frac{I_{out}}{C_L}$ \\
+Common mode rejection ratio & $CMRR=\left| \frac{a_{DM}}{a_{CM}}\right|$\\
+Power supply rejection ratio &
+$PSSR_+ = \left| \frac{a_{DM}}{a_{PS+}}\right|$ \newline
+$PSSR_- = \left| \frac{a_{DM}}{a_{PS-}}\right|$ \\
+Offset: Designregel & Symmetrie, gleiche Stromdichten $\frac{I}{W/L}$ in
+Stromspiegeltransistoren\\
+\end{tabular}
