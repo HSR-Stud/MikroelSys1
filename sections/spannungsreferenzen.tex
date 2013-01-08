@@ -1,0 +1,28 @@
+\section{Spannungsreferenzen}
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}[b]{10cm}
+		\centering
+	%	{\input{tikz/mos_op_stabilitaet_bode}}
+		\caption{Prinzip der Spannungsreferenz}
+	\end{subfigure}\qquad
+	\begin{subfigure}[b]{8cm}
+		\centering
+		%{\input{tikz/rueckgekoppelter_verstaerker}}
+		%TODO
+		\caption{Praktische Schaltung}
+	\end{subfigure}
+	\caption{Bandgap-Schaltungen}
+	\label{fig:spannungsreferenzen}
+\end{figure}
+
+$V_{ref}=V_D+K\cdot \Phi_t$\\
+$\Phi_t = \frac{kT}{e}$, ist bei Raumtemperatur $27^\circ C$ $\Phi_t=25.9mV$\\
+\begin{tabular}{ll}
+Boltzmann-Konstante & $k=1.38\cdot 10^{-23}\frac{J}{K}$\\
+absolute Temperatur & T = Temperatur in Kelvin\\
+Elementarladung & $e=1.60\cdot 10^{-19}C$\\
+\end{tabular}\\
+\textbf{Realisierung:}\\
+Die beiden Emitterflächen werden mit $A_1$ bzw. $A_2$ bezeichnet.\\
+$V_{ref}=V_{EB1}+\Phi_t\cdot\frac{R_2}{R_3}\cdot\ln\left(\frac{R_2}{R_1}\cdot\frac{A_2}{A_1}\right)$
