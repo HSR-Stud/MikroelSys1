@@ -1,0 +1,22 @@
+\begin{circuitikz}[american, scale=0.5, transform shape]
+\ctikzset{tripoles/mos style/arrows}
+
+\draw
+	(2,1) node [nmos] (M1) {}
+	
+	(2,4) node [circ] {} to [I=$I_B$] (M1.D)
+	(0,1) node [ocirc] {} to [short, i=$I_I$] (0.5,1) to (M1.G)
+	(M1.S) to (2,0) node [ground] {}
+	
+	(0.5,1) to (0.5,2) to [C=$C_1$] (2,2) to [short, i<=$I_O$] (4,2) node [ocirc] {}
+	
+	(0,0) node [ground] {}
+	(4,0) node [ground] {}
+	
+;
+
+\draw [->] (4,1.8) -- (4,0.2) node [anchor=south west] {$V_O$};
+\draw [->] (0,0.8) -- (0,0.2) node [anchor=south west] {$V_I$};
+
+
+\end{circuitikz}
