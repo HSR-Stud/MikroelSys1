@@ -38,6 +38,24 @@
 
 
 \subsection{Betriebsarten}
+Achtung: Beim Bipolar Transistor wird der Bereich links der Sättigungsgrenze als Sättigungsbereich bezeichnet, beim MOS-Transistor ist es der Bereich
+rechts der Sättigungsgrenze!
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{6cm}
+		\centering
+		{\input{tikz/ersatzschaltbild_widerstandsbetrieb}}
+		\caption{Widerstandsbetrieb}
+	\end{subfigure} \qquad\qquad
+	\begin{subfigure}[b]{7cm}
+		\centering
+		{\input{tikz/ersatzschaltbild_stromquellenbetrieb}}
+		\caption{Stromquellenbetrieb}
+	\end{subfigure}
+	\caption{Ersatzschlatbilder MOS-Transistoren}
+\end{figure}
+
 \subsubsection{Ungesättigter Betrieb}
 Bei $V_{DS} = 0$ verhält sich der Kanal wie ein Widerstand. Die Kennlinie ist eine Gerade durch den Ursprung. Je steiler diese Gerade ist, desto
 kleiner ist der Widerstand $r_{DS}$.
@@ -50,6 +68,7 @@ Andere Bezeichnungen: differentieller- , Kleinsignal-, dynamischer Ausgangswider
 \[
 	r_{DS} = \frac{1}{g_0} = \frac{dV_{DS}}{dI_{D}} \approx \frac{\Delta V_{DS}}{\Delta I_D}
 \]
+
 
 
 \subsection{Transferkennlinie}
