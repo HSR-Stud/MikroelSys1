@@ -1,0 +1,39 @@
+\begin{circuitikz}[scale=1.5, european]
+
+\draw
+	(0,0) node [ground] {}
+	(1,0) node [ground] {}
+	(2,0) node [ground] {}
+	(3,0) node [ground] {}
+	(4,0) node [ground] {}
+	
+	(0,1) node [pnp, xscale=-1] (T1) {}
+	(3,1) node [pnp] (T2) {}
+
+	(T1.B) -| (1,0)
+	(T1.C) -- (0,0)
+	(T1.E) -- (0,3)
+	
+	(T2.B) -| (2,0)
+	(T2.C) -- (3,0)
+	(T2.E) to [R=$R_3$] (3,3)
+	
+	(1.5,4) node [op amp, rotate=90, yscale=-1] (opamp) {}
+	
+	(0,3) -| (opamp.+)
+	(3,3) -| (opamp.-)
+	
+	(0,3) to [R=$R_1$, *-] (0,5) to [short, -o] (4,5)
+	(3,3) to [R=$R_2$, *-*] (3,5)
+	
+	(opamp.out) to [short, -*] (1.5,5)
+	
+	(4,4.5) to (4,0.5)
+	(4,2.5) node [anchor=east] {$V_{ref}$}
+		
+	(0.5,1.5) -- (2.5,1.5)
+	
+	(1.5,1.5) node [anchor=south] {$\Delta V_D$}
+;
+
+\end{circuitikz}
