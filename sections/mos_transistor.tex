@@ -1,99 +1,61 @@
 \section{MOS-Transistoren\skript{Kap. 5}}
 
-\subsection{Allgemeine Begriffe und Formeln}
+% \subsection{Allgemeine Begriffe und Formeln}
+%TODO: was ist hier noch nötig?
 
-%\begin{tabular}{|l|l|l|}
-%	\hline
-%	$V_T$			& Schwellenspannung		& Threshold Voltage
-%	\\ \hline
-%	$V_{DS,sat}$	& Sättigungsspannung	&
-%	\\ \hline
-%	$a_A$			& Early-Faktor			&
-%	\\ \hline
-%	$\lambda$		& Kanallängen Modulationsfaktor & $\lambda = \frac{1}{V_A}$, \quad $I_{D,real} = I_{D,ideal}(1 + \lambda V_{DS})$
-%	\\ \hline
-%	$V_A$			& Early-Spannung		& $V_A \approx a_A \cdot L$ \quad $V_{A}$ ist immer positiv
-%	\\ \hline
-%	$\Phi_t$		& Temperaturspannung	& $\Phi_t = V_{temp} = \frac{kT}{e} \quad k = 1.38 \cdot 10^{23} J/K \quad e=1.6 \cdot 10^{-19} C$
-%	\\ \hline
-%	$r_{DS}$		& Ausgangswiderstand	& $r_{DS} = \frac{1}{g_0} \approx \frac{\Delta V_{DS}}{\Delta I_D} \quad 
-%											  \text{oder} \quad r_{DS} = \frac{V_A + V_{DS}}{I_{D,real}} \approx \frac{V_A}{I_D} $ 
-%	\\				&						&$V_{A}, V_{DS}, I_{D,real}$ immer im Betrag rechnen
-%	\\ \hline
-%	
-%\end{tabular}
+\subsection{Bestimmung des Arbeitsbereichs}
 
-\subsection{Inversion}
+\begin{enumerate}
+	\item Bestimmung ob weak, moderate oder strong inversion.
+	\item Berechnen der Sättigungsspannung.
+	\item Wenn $V_{DS} > V_{DS,sat}$, $\Rightarrow$ gesättigt.
+\end{enumerate}
 
 \begin{tabular}{|l|l|l|}
 	\hline
 	\textbf{Arbeitsbereich}	& \textbf{Bedingung}					& \textbf{Sättigungspannung}
 	\\ \hline
-	weak inversion			& $0 < V_{GS} < V_T - 60mV$				& $V_{DS,sat} \approx 5\Phi_t \approx 130mV \quad \text{(bei } T = 300K \text{)}$ 
-	\\ 						&										& $V_{GS} = V_{M} + h_{M} \cdot \Phi_t \cdot 																\ln{\frac{I_{D}}{\frac{W}{L} \cdot I_{M}}}$ 
+	weak inversion			& $0 < V_{GS} < V_T - 60mV$				& $V_{DS,sat} \approx 5\Phi_t \approx 130mV \quad \text{(bei } T = 300K \text{)}$ \\
+	$I_D' < I_M'$			&										& $V_{GS} = V_{M} + h_{M} \cdot \Phi_t \cdot 																\ln{\frac{I_{D}}{\frac{W}{L} \cdot I_{M}}}$ 
 	\\ \hline
-	moderate inversion		& $V_T - 60mV < V_{GS} < V_T + 160mV$	&
+	moderate inversion		& $V_T - 60mV < V_{GS} < V_T + 160mV$	& \\
+	$I_M' < I_D' < I_H'$ 	& 										&
 	\\ \hline
-	strong inversion		& $V_T + 160mV < V_{GS} $				& $V_{DS,sat} = V_{GS} - V_T = \sqrt{\frac{{2 I_{D}}}{\beta}} = 																	\sqrt{\frac{2 I_{D}}{\frac{W}{L} \cdot \beta_{0}}}$
-	\\ \hline
-\end{tabular}
+	strong inversion		& $V_T + 160mV < V_{GS} $				& $V_{DS,sat} = V_{GS} - V_T = \sqrt{\frac{{2 I_{D}}}{\beta}} = \sqrt{\frac{2 I_{D}}{\frac{W}{L} \cdot \beta_{0}}}$
+	\\ 
+	$I_H' < I_D'$ & & \\ \hline
+\end{tabular} \\
 
+mit $I_D = \frac{W}{L} I_D'$ \hspace{5mm} und \hspace{5mm} $\Phi_t = \frac{kT}{e}$, wobei $k = 1.38 \cdot 10^{-23} \frac{J}{K}$, und $e = 1.6 \cdot 10^{-19}C$ \\
 
-\subsection{Betriebsarten}
-Achtung: Beim Bipolar Transistor wird der Bereich links der Sättigungsgrenze als Sättigungsbereich bezeichnet, beim MOS-Transistor ist es der Bereich
-rechts der Sättigungsgrenze!
-
-\begin{figure}[h]
+\subsection{Kennlinien}
+\subsubsection{Ausgangskennlinie}
+\begin{minipage}{8cm}
 	\centering
-	\begin{subfigure}[b]{6cm}
-		\centering
-		\adjustbox{scale=0.7}{\input{tikz/ersatzschaltbild_widerstandsbetrieb}}
-		\caption{Widerstandsbetrieb}
-	\end{subfigure} \qquad\qquad
-	\begin{subfigure}[b]{7cm}
-		\centering
-		\adjustbox{scale=0.7}{\input{tikz/ersatzschaltbild_stromquellenbetrieb}}
-		\caption{Stromquellenbetrieb}
-	\end{subfigure}
-	\caption{Ersatzschlatbilder MOS-Transistoren}
-\end{figure}
+	\includegraphics[width=7cm]{images/Ausgangskennlinie.png}
+\end{minipage}
+\begin{minipage}{10cm}
+	\textbf{Gesättigt}, Stromquellen-Betrieb:\\
+	Geraden horizontal, dann ist $r_{DS}=\infty$ (idealer Transistor). \\
+	Anstieg der Geraden entspricht Ausgangsleitwert $g_0$ bzw. Ausgangswiderstand $r_{DS}$. \\
+	
+	\textbf{Ungesättigt}, Widerstandsbetrieb: \\
+	Je steiler die Gerade, desto kleiner $r_{DS}$. \\
+	
+	{ \centering 
+	\adjustbox{scale=0.5}{\input{tikz/ersatzschaltbild_widerstandsbetrieb}}
+	\hspace{5mm}
+	\adjustbox{scale=0.5}{\input{tikz/ersatzschaltbild_stromquellenbetrieb}}
+	}
 
-\subsubsection{Ungesättigter Betrieb}
-Bei $V_{DS} = 0$ verhält sich der Kanal wie ein Widerstand. Die Kennlinie ist eine Gerade durch den Ursprung. Je steiler diese Gerade ist, desto
-kleiner ist der Widerstand $r_{DS}$.
+\end{minipage}
 
-\subsubsection{Gesättigter Betrieb}
-Bei $V_{DS} \geq V_{DS,sat}$ verhält sich der Kanal wie eine Stromquelle. Wenn die Geraden horizontal verlaufen ist $r_{DS} = \infty$ und
-es handelt sich um einen idealen Transistor. Beim realen Transistor steigen jedoch diese Geraden immer leicht an.
-Der Anstieg entspricht dem \textbf{Ausgangsleitwert} $g_0$, respektive dem \textbf{Ausgangswiderstand} $r_{DS}$.
-Andere Bezeichnungen: differentieller- , Kleinsignal-, dynamischer Ausgangswiderstand.
-\[
-	r_{DS} = \frac{1}{g_0} = \frac{dV_{DS}}{dI_{D}} \approx \frac{\Delta V_{DS}}{\Delta I_D}
-\]
-
-Der Kanal-Widerstand kann auch mit Hilfe der Early-Spannung berechnet werden:
-\[
-	r_{DS} = \frac{V_A + V_{DS}}{I_{Dreal}} \quad \stackrel{V_A >> V_{DS}}{\approx} \quad \frac{V_A}{I_D}
-\]
-
-\subsection{Transferkennlinie}
-
-
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[b]{0.33\textwidth}
-		\centering
-\adjustbox{scale=0.8}{\input{tikz/transferkennlinien}}
-	\end{subfigure} \qquad\qquad
-	\begin{subfigure}[b]{0.58\textwidth}
-		{\includegraphics[width=\textwidth]{images/Transferkennlinie.png}}
-		\centering
-
-	\end{subfigure}
-\end{figure}
-
-
-
+\subsubsection{Transferkennlinie}
+{	\centering
+		\adjustbox{scale=0.8}{\input{tikz/transferkennlinien}}
+	\qquad\qquad
+		\includegraphics[width=10cm]{images/Transferkennlinie.png}
+} \\
 
 \setArrayStretch{1.1}
 \begin{tabular}{|lp{3cm}|p{6cm}|p{8cm}|}
@@ -136,7 +98,7 @@ Der Kanal-Widerstand kann auch mit Hilfe der Early-Spannung berechnet werden:
 
 \subsection{Drainstromgleichungen}
 \setArrayStretch{1.5}
-\begin{tabular}{|l|l|l|}
+\begin{tabular}{|p{3.8cm}|l|l|}
 	\hline
 		\textbf{Ausgangsstrom} 
 		& \multicolumn{2}{c|}{\textbf{Ausgangsspannungsbereich} ($V_{DS}$-Bereich)}
@@ -145,42 +107,73 @@ Der Kanal-Widerstand kann auch mit Hilfe der Early-Spannung berechnet werden:
 		& Transistor ungesättigt ($|V_{DS}| < |V_{DS,sat}|$)
 		& Transistor gesättigt ($|V_{DS}| > |V_{DS,sat}|$)
 	\\ \hline
-		\multicolumn{3}{|c|}{\textbf{n-Kanal ohne Kanallängenmodulation und ohne unterschiedlicher Transkonduktanz:}}
+		\multicolumn{3}{|c|}{\textbf{n-Kanal Transistor}}
 	\\ \hline
-		EXP-Bereich
-		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}} (1-e^{\frac{-V_{DS}}{\Phi_t}})$
-		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}}$
-	\\ \hline
-		QUAD-Bereich
-		& $I_D = \beta [(V_{GS} - V_T) V_{DS} - \frac{V_{DS}^2}{2}]$
-		& $I_D = \frac{\beta}{2}(V_{GS} - V_T)^2$
-	\\ \hline
-		\multicolumn{3}{|c|}{\textbf{n-Kanal mit Kanallängenmodulation und mit unterschiedlicher Transkonduktanz:}}
-	\\ \hline
-		EXP-Bereich
+		EXP-Bereich \newline (weak inversion)
 		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}} (1-e^{\frac{-V_{DS}}{\Phi_t}}) (1 + \lambda V_{DS})$
 		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}} (1 + \lambda V_{DS})$
 	\\ \hline
-		QUAD-Bereich
+		QUAD-Bereich \newline (strong inversion)
 		& $I_D = B [(V_{GS} - V_T) V_{DS} - \frac{V_{DS}^2}{2}] (1 + \lambda V_{DS})$
 		& $I_D = \frac{\beta}{2}(V_{GS} - V_T)^2 (1 + \lambda V_{DS})$
 	\\ \hline
-		\multicolumn{3}{|c|}{\textbf{p-Kanal mit Kanallängenmodulation und mit unterschiedlicher Transkonduktanz:}}
+		\multicolumn{3}{|c|}{\textbf{p-Kanal Transistor}}
 	\\ \hline
-		EXP-Bereich
+		EXP-Bereich \newline (weak inversion)
 		& $I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}} (1-e^{\frac{-V_{DS}}{\Phi_t}}) (1 - \lambda V_{DS})$
 		& $I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}} (1 - \lambda V_{DS})$
 	\\ \hline
-		QUAD-Bereich
+		QUAD-Bereich \newline (strong inversion)
 		& $I_D = -B [(V_{GS} - V_T) V_{DS} - \frac{V_{DS}^2}{2}] (1 - \lambda V_{DS})$
 		& $I_D = -\frac{\beta}{2}(V_{GS} - V_T)^2 (1 - \lambda V_{DS})$
 	\\ \hline
-\end{tabular}
-\newline
+\end{tabular} \\
 
-Die Sättigungsspannung beträgt im \textbf{EXP-Bereich} $5\Phi_t$, im \textbf{QUAD-Bereich} $V_{GS}-V_T$.
+Wird die Kanallängenmodulation vernachlässigt, kann einfach der $(1 - \lambda V_{DS})$ Term weggelassen werden. \\
 
-Parameter der Gleichungen:
+\subsection{Kleinsignalparameter}
+\begin{tabularx}{\linewidth}{|X|l|l|}
+	\hline
+		& \textbf{Transistor ungesättigt} & \textbf{Transistor gesättigt} 
+	\\ \hline
+		& Kanalwiderstand bei $V_{DS}=0$:
+		& Kanalwiderstand:
+	\\
+		& $r_{DS0} = \frac{dV_{DS}}{dI_D}|_{V_{DS}=0} = \frac{\Phi_t}{I_{D0}}$
+		& $r_{DS} = \frac{dV_{DS}}{dI_D} = \frac{V_A + V_{DS}}{I_D} \approx \frac{V_A}{I_D}$
+	\\ weak
+		& Kanalwiderstand bei $V_{DS} = 0V \dots V_{DS,sat}$:
+		& 
+	\\ inversion
+		& $r_{DS} = \frac{dV_{DS}}{dI_D} \approx \frac{\Phi_t}{I_D} e^{\frac{V_{DS}}{\Phi_t}}$ (ungenau, kaum benötigt)
+		&
+	\\ \cline{2-3}
+		& $g_m$ nicht benötigt
+		& Steilheit
+	\\
+		& 
+		& $g_m =  \frac{dI_D}{V_{GS}} = \frac{I_D}{n_m \Phi_t}$	
+	\\ \hline
+		& Kanalwiderstand bei $V_{DS}=0$:
+		& Kanalwiderstand:
+	\\
+		& $r_{DS0} = \frac{dV_{DS}}{dI_D}|_{V_{DS}=0} = \frac{1}{\beta (V_{GS} - V_T) (1 + \lambda V_{DS})}$
+		& $r_{DS} = \frac{dV_{DS}}{dI_D} = \frac{V_A + V_{DS}}{I_D} \approx \frac{V_A}{I_D}$
+	\\ strong
+		& Kanalwiderstand bei $V_{DS} = 0V \dots V_{DS,sat}$:
+		& $r_{DS} = \frac{dV_{DS}}{dI_D}|_{V_{DS}=0} = \frac{1}{\beta [(V_{GS} - V_T)-V_{DS}] (1 + \lambda V_{DS})}$
+	\\ \cline{2-3} inversion
+		& $g_m$ nicht benötigt
+		& Steilheit (zwei Formeln)
+	\\
+		&
+		& $g_m = \frac{dI_D}{V_{GS}} = \beta (V_{GS} - V_T) (1 + \lambda V_{DS})$
+	\\
+		&
+		& $g_m = \frac{dI_D}{V_{GS}} = \sqrt{2 I_D \beta (1 + \lambda V_{DS})} $
+	\\ \hline
+\end{tabularx}
+
 
 \begin{tabularx}{\linewidth}{|l|l|X|}
 	\hline
@@ -213,6 +206,7 @@ Parameter der Gleichungen:
 		\[
 			n_M = 1 + \frac{\gamma}{2 \sqrt{V_{SB} + \Phi_0}}
 		\]
+		mit $\Phi_0 = 2 \Phi_F \approx 0.6V$. 
 		Für $V_{SB} = 0$ erhalten wir $n_M=1.39$. Häufig wird ein Wert von $n_M \approx 1.5$ angegeben.
 	\\ \hline
 		$V_A$			& Early-Spannung		& $V_A \approx a_A \cdot L$ \quad $V_{A}$ ist immer positiv
@@ -225,7 +219,7 @@ Parameter der Gleichungen:
 		Der MOS-Transistor wird vielfach mit $\lambda = 0$ idealisiert, was die Handrechnung vereinfacht.
 	\\ \hline
 		$B, \beta$ & Transkondukdanz &
-		Steilheit, Verstärkungsfaktor. Dieser Faktor ist im gesättigten und ungesättigten Betrieb \textbf{grundsätzlich verschieden}.
+		Steilheit, Verstärkungsfaktor. Dieser Faktor ist im gesättigten und ungesättigten Betrieb \textbf{grundsätzlich verschieden}. Es gilt: $\beta = \frac{W}{L} \beta_0 = \frac{W}{L} \mu C_{ox}''$. 
 	\\ \hline
 		$g_{m}$	& Transkonduktanz & Steilheit oder Gate-Steilheit. Beschreibt Zusammenhang zwischen $I_{DS}$ und $V_{GS}$. Mass für die Verstärkung.
 	\\ \hline
@@ -240,23 +234,3 @@ Parameter der Gleichungen:
 		$r_{s}$	& innerer Source-Widerstand & $r_{s} = \frac{1}{g_{m}}$
 	\\ \hline
 \end{tabularx}
-
-
-\subsection{Richtgrössen der Gleichungsparameter}
-\begin{tabular}{|l|l|l|l|l|l|}
-	\hline
-	\multirow{2}{*}{Parameter-Name}			& \multirow{2}{*}{Parameter-Symbol}	& \multicolumn{2}{c|}{C175 ($2\mu m$ Technologie)}	& \multicolumn{2}{c|}{C35 ($35\mu m$ Technologie)}
-	\\ \cline{3-6}
-											&					& n-Kanal				& p-Kanal									& n-Kanal					& p-Kanal
-	\\ \hline 			
-	Schwellenspannung (bei $V_{BS} = 0$)	& $V_{T0}$			& $0.65V$				& $-0.8V$									& $0.46V$					& $-0.68V$
-	\\ \hline
-	Spezifische Transkonduktanz				& $\beta_0$			& $80\frac{\mu A}{V^2}$	& $30 \frac{\mu A}{V^2}$					& $170 \frac{\mu A}{V^2}$	& $58 \frac{\mu A}{V^2}$
-	\\ \hline
-	Early Faktor							& $a_A$				& $17 \frac{V}{\mu m}$	& $16 \frac{V}{\mu m}$						&							&
-	\\ \hline
-	Unterschwellen Neigungsfaktor			& $n_M$				& 1.5					& 1.5										& 1.3						& 1.3
-	\\ \hline		
-\end{tabular}
-
-
