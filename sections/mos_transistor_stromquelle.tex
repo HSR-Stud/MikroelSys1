@@ -1,17 +1,22 @@
 \section{MOS-Transistor als Stromquelle\skript{Kap. 8}}
 
-\subsection{Strom einer MOS Stromquelle}
-$I_D=\frac{\beta}{2}\left(V_{GS}-V_T\right)^2\left(1+\lambda V_{DS}\right)
-\approx \frac{\beta}{2}\left(V_{GS}-V_T\right)^2 $
-\subsection{Sättigungsspannung}
-\textbf{Bei starker Inversion}
-$V_{DS,sat}=V_{GS}-V_t=\sqrt{\frac{2I_d}{\beta}}$\\
-\textbf{Bei schwacher Inversion} $V_{DS,sat}\approx 5 \Phi_t \approx 130mV$
+{ \centering
+\begin{minipage}{0.49 \linewidth}
+	\subsection{Strom einer MOS Stromquelle}
+	$I_D=\frac{\beta}{2}\left(V_{GS}-V_T\right)^2\left(1+\lambda V_{DS}\right)
+	\approx \frac{\beta}{2}\left(V_{GS}-V_T\right)^2 $
+\end{minipage}
+\begin{minipage}{0.49 \linewidth}
+	\subsection{Sättigungsspannung}
+	\textbf{Bei starker Inversion}
+	$V_{DS,sat}=V_{GS}-V_t=\sqrt{\frac{2I_d}{\beta}}$\\
+	\textbf{Bei schwacher Inversion} $V_{DS,sat}\approx 5 \Phi_t \approx 130mV$
+\end{minipage}
+}
 
-\begin{sidewaystable}
-\begin{tabular}{|l|p{2.5cm}|p{8.5cm}|p{6.5cm}|}
+\begin{tabularx}{\linewidth}{|l|p{3cm}|X|X|}
 \hline
-Schaltung & Konfiguration & Ausganswiderstand $r_0$ & Minimale Ausgangsspannung $V_{0,min}$ 
+Schaltung & Konfiguration & Ausgangswiderstand $r_0$ & Minimale Ausgangsspannung $V_{0,min}$ 
 \\ \hline
 \adjustbox{valign=t, padding=1ex}{\input{tikz/einfache_stromquelle.tex}} &
 Einfache Quelle mit 1 Transistor &
@@ -26,12 +31,11 @@ $r_{iD}=r_{DS}\left(1+\frac{R_S}{r_S}+\frac{R_S}{r_{DS}}\right)=\frac{1}{g_0}\le
 $r_{out}=r_{o2}\approx\frac{r_{DS}^2}{r_{S2}}=\left(\frac{r_{DS}}{r_S}\right)r_{DS}=\mu\cdot
 r_{DS}=\frac{1}{g_{o1}}\cdot\frac{g_{m2}}{g_{o2}}$ & 
 $V_{0,min}=V_{G2}-V_{GS2}+V_{DS2,sat}$\newline$V_{0,min}=V_{DS1,sat}+V_{DS2,sat}$\newline$
-\left(\text{, bei } V_{G2}=V_{DS1,sat}+V_{GS2}\right)$
+\left(\text{mit } V_{G2}=V_{DS1,sat}+V_{GS2}\right)$
 \\ \hline 
 \adjustbox{valign=t, padding=1ex}{\input{tikz/stromquelle_kaskode_geregelt.tex}} & Stromquelle mit
  geregelter Kaskode &$r_{out} \approx
 r_{DS1}\cdot\frac{r_{DS2}}{r_{S2}}\cdot\frac{r_{DS3}}{r_{S3}}=\frac{1}{g_{o1}}\cdot\frac{g_{m2}}{g_{o2}}\cdot\frac{g_{m3}}{g_{o3}}
 $ &$V_{O,min}=2V_{DS,sat}$
 \\ \hline
-\end{tabular}
-\end{sidewaystable}
+\end{tabularx}

@@ -5,7 +5,7 @@
 	\draw (0,-2) -- (S);
 	\draw (G) -- +(-1.5,0);
 	\draw (4,0) to[R=$r_{DS}$] +(0,-2);
-	\draw (3,0) to[I] +(0,-2);
+	\draw (3,0) to[I,mirror,l=$g_mV_{GS}$] +(0,-2);
 	\draw (0,-2) to[V] ++(0,2) ;
 	\draw (0,-2) -- + (0,-0.2) node[ground] {};
 	\draw (D) -- ++(-1,0) to[short, i_=$I_D$] +(-1,0);

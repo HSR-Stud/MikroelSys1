@@ -15,13 +15,18 @@ Ziel: Aus einer einzelnen genauen Strom- oder Spannungsquelle verschiedene genau
 			= \frac{\left(\frac{W}{L}\right)_o}{\left(\frac{W}{L}\right)_i}
 			= \frac{I_{Do}}{I_{Di}}
 	\]
-	\columnbreak
+	\\
 		
 	\textbf{Berechnung Ausgangsstrom}
 	\[
 		I_{out} = I_{in}\cdot\frac{W_{T_{out}}}{W_{T_{in}}}
 	\]
-	gilt nur wenn $L_{T_{out}} = L_{T_{in}}$
+	gilt nur wenn $L_{T_{out}} = L_{T_{in}}$ \\
+
+	\columnbreak
+	\textbf{ESB des Widlar-Stromspiegels} \\
+		\includegraphics[width=3cm]{images/stromspiegel/widlar_n.png} \\
+		\adjustbox{scale=0.7}{\input{tikz/ESB_Widlar.tex}}
 \end{multicols}
 
 
@@ -41,22 +46,20 @@ Ziel: Aus einer einzelnen genauen Strom- oder Spannungsquelle verschiedene genau
 	\\ \hline
 \end{tabular}
 
-Siehe Abbildung \ref{fig:stromspiegeltypen} für Schaltungen.
-
-
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[b]{3cm}
+	\begin{subfigure}[b]{5cm}
 		\centering
-		{\includegraphics[width=3cm]{images/stromspiegel/widlar.png}}
+		{\includegraphics[width=5cm]{images/stromspiegel/widlar.png}}
 		\caption{Widlar}
 	\end{subfigure} \qquad	
-	\begin{subfigure}[b]{3cm}
+	\begin{subfigure}[b]{5cm}
 		\centering
-		{\includegraphics[width=3cm]{images/stromspiegel/wilson.png}}
+		{\includegraphics[width=5cm]{images/stromspiegel/wilson.png}}
 		\caption{Wilson}
-	\end{subfigure} \qquad	
-	\begin{subfigure}[b]{3cm}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{5cm}
 		\centering
 		{\includegraphics[width=3cm]{images/stromspiegel/verbesserter_wilson.png}}
 		\caption{Verbesserter Wilson}
