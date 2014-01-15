@@ -1,13 +1,22 @@
 \section{Schaltungselemente in CMOS\skript{Kap. 4}}
-Absolutwerte von Widerständen und Kapazitäten können um mehr als $\pm 20\%$ Abweichen! Viel genauer lassen sich Verhältnisse herstellen, dort sind Toleranzen von
-unter $1\%$ üblich.
+\setArrayStretch{1}
+\begin{tabular}{ll}
+Absolute Genauigkeit: & $\pm 20 \%$ \\
+Relative Genauigkeit: & $\pm 1\%$
+\end{tabular}
+\setArrayStretch{1.8}
 
 \subsection{Kapazitäten}
-Es gibt im wesentlichen drei unterschiedliche Arten von Kapazitäten, welche in einem CMOS-Chip realisiert werden können: 
-Poly-Poly-Kapazität ($C'' \approx 1fF/\mu m^2$),
-MOS-Kapazität ($C'' \approx 10fF/\mu m^2$),
-MIM-Kapazität (Metall-Isolator-Metall, $C'' \approx 1fF/\mu m^2$). $C''$ bezeichnet dabei die spezifische Kapazität pro Flächeneinheit.
-Der Plattenabstand $d$ ist meist durch die Herstellung gegeben.
+\setArrayStretch{1}
+\begin{tabular}{ll}
+	Poly-Poly-Kapazität & $C'' \approx 1fF/\mu m^2$ \\
+	MOS-Kapazität & $C'' \approx 10fF/\mu m^2$ \\
+	MIM-Kapazität (Metall-Isolator-Metall) &  $C'' \approx 1fF/\mu m^2$
+\end{tabular}
+\setArrayStretch{1.8}
+
+$C''$:  spezifische Kapazität pro Flächeneinheit. \\
+$d$: Plattenabstand (meist durch Herstellung gegeben). \\
 
 \begin{tabularx}{\linewidth}{|l|X|}
 	\hline
@@ -22,12 +31,13 @@ Der Plattenabstand $d$ ist meist durch die Herstellung gegeben.
 \end{tabularx}
 
 \subsection{Widerstände}
-Widerstände in CMOS sind meist unerwünscht da sie viel Platz brauchen und viel Wärme entsteht. Sollte trotzdem ein
-Widerstand erforderlich sein, so lässt so ist er über seine Breite und Länge zu definieren:
+Unerwünscht, da hoher Platzbedarf und Wärme.
+
 \[
 	R = R_\diamond \frac{L}{W}
 \]
-
+{
+\centering
 \begin{tabularx}{0.8\linewidth}{|l|l|X|l|l|}
 	\hline
 	\multicolumn{5}{|c|}{\textbf{Typische Werte für Widerstände}}
@@ -38,4 +48,5 @@ Widerstand erforderlich sein, so lässt so ist er über seine Breite und Länge 
 	\\ \hline
 	N-Well-Widerstand & $R \approx 1k\Omega/\diamond$ & & &
 	\\ \hline
-\end{tabularx}
+\end{tabularx} \\
+}
