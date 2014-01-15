@@ -41,13 +41,6 @@ mit $I_D = \frac{W}{L} I_D'$ \hspace{5mm} und \hspace{5mm} $\Phi_t = \frac{kT}{e
 	
 	\textbf{Ungesättigt}, Widerstandsbetrieb: \\
 	Je steiler die Gerade, desto kleiner $r_{DS}$. \\
-	
-	{ \centering 
-	\adjustbox{scale=0.5}{\input{tikz/ersatzschaltbild_widerstandsbetrieb}}
-	\hspace{5mm}
-	\adjustbox{scale=0.5}{\input{tikz/ersatzschaltbild_stromquellenbetrieb}}
-	}
-
 \end{minipage}
 
 \subsubsection{Transferkennlinie}
@@ -97,7 +90,7 @@ mit $I_D = \frac{W}{L} I_D'$ \hspace{5mm} und \hspace{5mm} $\Phi_t = \frac{kT}{e
 
 
 \subsection{Drainstromgleichungen}
-\setArrayStretch{1.5}
+\setArrayStretch{1.4}
 \begin{tabular}{|p{3.8cm}|l|l|}
 	\hline
 		\textbf{Ausgangsstrom} 
@@ -131,6 +124,20 @@ mit $I_D = \frac{W}{L} I_D'$ \hspace{5mm} und \hspace{5mm} $\Phi_t = \frac{kT}{e
 
 Wird die Kanallängenmodulation vernachlässigt, kann einfach der $(1 - \lambda V_{DS})$ Term weggelassen werden. \\
 
+\subsection{Kleinsignal-Ersatzschaltbild}
+\begin{figure}[htbp]
+        \centering
+        \begin{subfigure}[b]{6cm}
+                \centering
+                \adjustbox{scale=0.7}{\input{tikz/ersatzschaltbild_widerstandsbetrieb}}
+                \caption{Widerstandsbetrieb}
+        \end{subfigure} \qquad\qquad
+        \begin{subfigure}[b]{7cm}
+                \centering
+                \adjustbox{scale=0.7}{\input{tikz/ersatzschaltbild_stromquellenbetrieb}}
+                \caption{Stromquellenbetrieb, PI-ESB}
+        \end{subfigure}
+\end{figure}
 \subsection{Kleinsignalparameter}
 \begin{tabularx}{\linewidth}{|X|l|l|}
 	\hline

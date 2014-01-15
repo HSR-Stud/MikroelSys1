@@ -1,0 +1,9 @@
+\begin{circuitikz}[american, european resistors]
+	\draw (0,0) node[circ] {} node[right] {IN};
+	\draw (0,0) -- (0,-0.5);
+	\draw (0,-0.5) to[R=$1/g_m$,i>^=$I_B$] (0,-2.5);
+	\draw (2,0) node[circ] {} node[right] {OUT};
+	\draw (2,0) -- (2,-0.5);
+	\draw (2,-0.5) to[I,l=$n_m I_B$] (2,-2.5);
+	\draw (0,-2.5) -- (2,-2.5);
+\end{circuitikz}
