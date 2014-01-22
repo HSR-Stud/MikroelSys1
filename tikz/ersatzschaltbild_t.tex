@@ -1,0 +1,20 @@
+\begin{circuitikz}[american, european resistors]
+	\draw (1.5,0) node[circ, name=G] {} node[above] {G};
+	\draw (5,2) node[circ, name=D] {} node[right] {D};
+	\draw (5,-2) node[circ, name=S] {} node[right] {S};
+
+	\draw (G) -- +(-1.5,0);
+	
+	\draw (G)  -- (3,0);
+	\draw (3,2) to[I,mirror,l=$g_mV_{GS}$] (3,0);
+	\draw (3,2) -- (D);
+	
+	\draw (3,0) to[R={$R_s$},mirror] +(0,-2);
+	\draw (0,-2) to[V] ++(0,2) ;
+	\draw (0,-2) -- + (0,-0.2) node[ground] {};
+	\draw (S) -- (0,-2);
+	\draw[->, thick] (-0.9, -0.2) -- +(0,-1.4) node[midway, left] {$V_{GS}$};
+	
+	\draw (4.2,2) to[R=$r_{DS}$,mirror] (4.2,-2);
+	
+\end{circuitikz}
