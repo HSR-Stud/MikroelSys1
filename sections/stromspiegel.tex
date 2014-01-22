@@ -1,34 +1,26 @@
 \section{MOS Stromspiegel\skript{Kap. 9}}
-Ziel: Aus einer einzelnen genauen Strom- oder Spannungsquelle verschiedene genaue Ströme erzeugen.
+Ziel: Aus einer einzelnen genauen Strom- oder Spannungsquelle verschiedene genaue Ströme erzeugen. \\
 
-\begin{tabularx}{\linewidth}{|l|l|X|}
-	\hline
-	Stromspiegelverhältnis & $n_m$ & $n_m = \frac{I_0}{I_i} = \frac{(\frac{W}{L})_{out}}{(\frac{W}{L})_{in}} \approx \frac{i_0}{i_i}$
-	\\ \hline
-\end{tabularx}
-
-\subsection{Die wichtigsten Formeln}
-\begin{multicols}{2}
+\begin{minipage}{8cm}
 	\textbf{Stromspiegelverhältnis}
 	\[
 		n_m = \frac{I_o}{I_i} 
 			= \frac{\left(\frac{W}{L}\right)_o}{\left(\frac{W}{L}\right)_i}
 			= \frac{I_{Do}}{I_{Di}}
 	\]
-	\\
-		
+	
 	\textbf{Berechnung Ausgangsstrom}
 	\[
 		I_{out} = I_{in}\cdot\frac{W_{T_{out}}}{W_{T_{in}}}
 	\]
 	gilt nur wenn $L_{T_{out}} = L_{T_{in}}$ \\
-
-	\columnbreak
+\end{minipage}
+\begin{minipage}{12cm}
 	\textbf{ESB des Widlar-Stromspiegels} \\
-		\includegraphics[width=3cm]{images/stromspiegel/widlar_n.png} \\
+		\includegraphics[width=3cm]{images/stromspiegel/widlar_n.png}
+		\vspace{1cm}
 		\adjustbox{scale=0.7}{\input{tikz/ESB_Widlar.tex}}
-\end{multicols}
-
+\end{minipage}
 
 \begin{tabular}{|l|c|l|l|l|}
 	\hline
