@@ -1,31 +1,36 @@
+\begin{multicols}{2}
+
 \section{Frequenzverhalten von MOS Verstärker}
 Jeder Knoten N bildet einen Pol bei der Frequenz
-$f_N=\frac{1}{2\pi\cdot R_NC_N}$\\
-Grobe Analyse: die Knoten mit hohen RC-Produkten suchen. Dort entstehen
+$f_N=\frac{1}{2\pi\cdot R_NC_N}$. \\
+\textbf{Grobe Analyse:} Die Knoten mit hohen RC-Produkten suchen. Dort entstehen
 Systempole, welche einen Abfall von 20dB/Dekade im Frequenzgang einleiten.
+
 \subsection{Widerstände}
-\begin{tabular}{lll}
-	Knotenimpedanz praktisch unendlich & $r_{iG}\rightarrow\infty$ & Gate \\
-	Knotenimpedanz sehr hoch & $r_{ds}=\frac{1}{g_0}$ & Drain des Transistors wenn
-	als Stromquelle beschaltet\\
-	Knotenimpedanz tief & $\frac{1}{g_m}$ & Drain des Transistors in
-	Diodenschaltung \\
-	& & Source des Transistors in Stromquellenschaltung \\
-\end{tabular}
+	\textbf{Knotenimpedanz praktisch unendlich:} \\ Gate: $r_{iG}\rightarrow\infty$ \\
+	\textbf{Knotenimpedanz sehr hoch:} \\ Drain des Transistors wenn
+		als Stromquelle beschaltet: $r_{ds}=\frac{1}{g_0}$  \\	
+	\textbf{Knotenimpedanz tief:} \\ Drain des Transistors in
+		Diodenschaltung, Source des Transistors in Stromquellenschaltung: $\frac{1}{g_m}$  \\
+		
 \subsection{Kapazitäten}
-\begin{tabular}{p{4cm}p{14cm}}
-	Knotenkapazität gross & C als passive Schaltungskomponente \\
-	Knotenkapazität mittel & parasitäre Kapazität verstärkt durch Miller-Effekt.
-	Häufig $C_{GD}$ eines verstärkenden Transistors\\
-	Knotenkapazität klein & Knoten mit parasitären Kapazitäten. In der Regel beim
-	Gate-Knoten am höchsten.
-\end{tabular}
+	\textbf{Knotenkapazität gross:} \\ C als passive Schaltungskomponente. \\
+	\textbf{Knotenkapazität mittel:} \\ parasitäre Kapazität verstärkt durch Miller-Effekt.
+	Häufig $C_{GD}$ eines verstärkenden Transistors. \\
+	\textbf{Knotenkapazität klein:} \\ Knoten mit parasitären Kapazitäten. In der Regel beim
+	Gate-Knoten am höchsten. \\
+
+\columnbreak
+
 \subsection{Millerkapazität}
-Die Miller Kapazität $C_M$ zwischen Ein- und ausgang eines Verstärkers mit
+Die Miller Kapazität $C_M$ zwischen Ein- und Ausgang eines Verstärkers mit
 Verstärker A liegt, erscheint:\\
+
 multipliziert mit ($1-A$) parallel zum Eingang ($C_{MI}$)\\
 multipliziert mit ($1-\frac{1}{A}$) parallel zum Ausbang ($C_{MO}$)\\
+
 $C_M$ wird aus dem Schema entfernt\\
+
 \subsection{Darstellung}
 \begin{enumerate}
   \item DC Verstärkung berechnen (aus Kleinsignalersatzschaltung für
@@ -34,3 +39,25 @@ $C_M$ wird aus dem Schema entfernt\\
   RC Produkt)
   \item Pole in Bode-Diagramm einzeichnen
 \end{enumerate}
+
+\subsection{Typische Kapazitäten}
+\adjustbox{max width=\linewidth}{
+	\begin{tabular}{|l|l|l|l|l|} 
+	\hline
+		& $C_{GS}$ & $C_{GD}$ & $C_{SB}$ & $C_{DB}$ \\ 
+	\hline
+		Gesättigt & $C_{GS0} + \frac{2}{3}C_{oxt}$ & $C_{GD0}$ & $C_{jSBt}+\frac{2}{3}C_{BCt}$ & $C_{jDBt}$ \\
+ 		Typ. Wert & 33 fF & 1.2 fF & 10 fF & 7 fF \\
+	\hline
+		Ungesättigt & $C_{GS0}+\frac{1}{2}C_{oxt}$ & $C_{GD0}+\frac{1}{2}C_{oxt}$ & $C_{jSBt}+\frac{1}{2}C_{BCt}$ & $C_{jDBt}+\frac{1}{2}C_{BCT}$ \\
+		Typ. Wert & 26 fF & 26 fF & 10 fF & 10 fF \\
+	\hline	
+	\end{tabular}
+}
+
+$C_{oxt} = C_{ox} \cdot W \cdot L_{eff}  \quad C_{BCt} = C_{jBC} \cdot W \cdot L_{eff} $ \\
+$C_{jSBt} = C_{jSB} \cdot A_S + C_{jswSB} \cdot P_S$ \\
+$C_{jDBt} = C_{jDB} \cdot A_D + C_{jswDB} \cdot P_D$ \\
+Wenn $V_{SB}=0$, dann $C_{SB}$ ignorieren und $C_{DB}=C_{DS}$.
+
+\end{multicols}

@@ -2,39 +2,31 @@
 Für Kennlinien der MOS-Dioden siehe Abbildung \ref{fig:diodenKennlinien}. Die MOS-Diode funktioniert im Stromquellenbetrieb.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[b]{5cm}
-		\centering
-		\adjustbox{scale=0.7}{\input{tikz/diode_ideal}}
-		\caption{Ideale Diode ($V_F = V_{F0}$)}
-	\end{subfigure}
-	\begin{subfigure}[b]{4cm}
+	\begin{subfigure}[b]{2cm}
 		\centering
 		\adjustbox{scale=0.7}{\input{tikz/diode_ideal}}
 		\caption{Reale Diode}
 	\end{subfigure} \quad
-	\begin{subfigure}[b]{4cm}
+	\begin{subfigure}[b]{3cm}
+			\centering
+			\adjustbox{scale=0.7}{\input{tikz/kennlinie_diode_real}}
+	\end{subfigure} \quad
+	\begin{subfigure}[b]{3cm}
 		\centering
 		\adjustbox{scale=0.7}{\input{tikz/diode_nmos}}
 		\caption{n-Kanal}
 	\end{subfigure}
-	\begin{subfigure}[b]{4cm}
+	\begin{subfigure}[b]{3cm}
 		\centering
 		\adjustbox{scale=0.7}{\input{tikz/diode_pmos}}
 		\caption{p-Kanal}
 	\end{subfigure}
-	\hspace{1.5cm}
-	
-	\begin{subfigure}[b]{4cm}
-		\adjustbox{scale=0.7}{\input{tikz/kennlinie_diode_ideal}}
-	\end{subfigure} \quad
-	\begin{subfigure}[b]{4cm}
-		\centering
-		\adjustbox{scale=0.7}{\input{tikz/kennlinie_diode_real}}
-	\end{subfigure} \qquad
-	\begin{subfigure}[b]{8cm}
+	\begin{subfigure}[b]{3cm}
 		\centering
 		\adjustbox{scale=0.7}{\input{tikz/kennlinie_diode_mos}}
-	\end{subfigure}			
+	\end{subfigure}	
+	\hspace{1.5cm}
+			
 	\caption{Gegenüberstellung Dioden-Kennlinien}
 	\label{fig:diodenKennlinien}
 \end{figure}
