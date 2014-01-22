@@ -1,27 +1,54 @@
 \section{Spannungsreferenzen}
-\begin{figure}[!h]
-	\centering
-	\begin{subfigure}[b]{10cm}
-		\centering
-		\adjustbox{scale=0.7}{\input{tikz/bandgap_prinzip}}
-		\caption{Prinzip der Spannungsreferenz}
-	\end{subfigure}\qquad
-	\begin{subfigure}[b]{8cm}
-		\centering
-		\adjustbox{scale=0.6}{\input{tikz/bandgap_cmos}}
-		\caption{Praktische Schaltung}
-	\end{subfigure}
-	\caption{Bandgap-Schaltungen}
-	\label{fig:spannungsreferenzen}
-\end{figure}
 
-$V_{ref}=V_D+K\cdot \Phi_t$\\
-$\Phi_t = \frac{kT}{e}$, ist bei Raumtemperatur $27^\circ C$ $\Phi_t=25.9mV$\\
-\begin{tabular}{ll}
-Boltzmann-Konstante & $k=1.38\cdot 10^{-23}\frac{J}{K}$\\
-absolute Temperatur & T = Temperatur in Kelvin\\
-Elementarladung & $e=1.60\cdot 10^{-19}C$\\
-\end{tabular}\\
-\textbf{Realisierung:}\\
-Die beiden Emitterflächen werden mit $A_1$ bzw. $A_2$ bezeichnet.\\
-$V_{ref}=V_{EB1}+\Phi_t\cdot\frac{R_2}{R_3}\cdot\ln\left(\frac{R_2}{R_1}\cdot\frac{A_2}{A_1}\right)$
+\begin{multicols}{2}
+	\subsection{Spannungsteiler}
+	\begin{minipage}{0.4\linewidth}
+		\includegraphics[width=2.5cm]{images/FET_Spannungsteiler.png} \\
+	\end{minipage}
+	\begin{minipage}{0.6\linewidth}
+		Temperatur: S klein \\
+		VDD / VSS: S = 1 \\
+		Prozessvariation: S klein \\
+	\end{minipage}
+	
+	\subsection{MOS-Diode}
+	\begin{minipage}{0.4\linewidth}
+		\includegraphics[width=3cm]{images/Diode_Spannungsteiler.png} \\
+	\end{minipage}
+	\begin{minipage}{0.6\linewidth}
+		Temperatur: S klein \\
+		VDD / VSS: S < 1 \\
+		Prozessvariation: S mittel \\
+	\end{minipage}	
+
+\subsection{Bandgap-Spannungsreferenz}
+	\textbf{Grundprinzip:} \\
+	\begin{minipage}{0.4\linewidth}
+		\adjustbox{scale=0.5}{\input{tikz/bandgap_prinzip}} \\
+	\end{minipage}
+	\begin{minipage}{0.6\linewidth}
+		$\Phi_t = \frac{kT}{e}$ \\($25.9mV$ bei Raumtemperatur) \\
+		
+		k: Boltzmann: $1.38\cdot 10^{-23}\frac{J}{K}$ \\
+		T: Absolute Temperatur $[K]$ \\
+		e: Elementarladung: $1.60\cdot 10^{-19}C$ \\
+	\end{minipage}	
+
+	\begin{minipage}{0.4\linewidth}
+		\adjustbox{scale=0.5}{\input{tikz/bandgap_cmos}} \\
+	\end{minipage}
+	\begin{minipage}{0.6\linewidth}
+		$V_{ref}=V_D+K\cdot \Phi_t$\\
+		
+		\textbf{Realisierung:}\\
+		Die beiden Emitterflächen werden mit $A_1$ bzw. $A_2$ bezeichnet.\\
+		$V_{ref}=V_{EB1}+\Phi_t\cdot\frac{R_2}{R_3}\cdot\ln\left(\frac{R_2}{R_1}\cdot\frac{A_2}{A_1}\right)$ \\
+	\end{minipage}		
+
+	
+
+	
+\end{multicols}
+
+
+
