@@ -1,1 +1,12 @@
 \section{Einstufige MOS Verstärker\skript{Kap. 10}}
+
+\begin{tabular}{ll}
+	Verstärker mit Widerstandslast & $a = -\frac{g_m}{\frac{1}{R_D}+g_0}$ \\
+		& $r_{out} = r_{iD} = \frac{1}{g_0}(1+g_mR_S)+R_S$ \\
+	Verstärker mit MOS-Dioden-Last & $a = -\frac{\frac{1}{g_{m2}}}{R_S + \frac{1}{g_{m1}}} \stackrel{R_S=0}{=} -\frac{g_{m1}}{g_{m2}} = -\sqrt{\frac{\beta_1}{\beta_2}}$ \\
+	Verstärker mit Stromquellenlast & $a = -\frac{R_D}{R_S + \frac{1}{g_m}+(R_D+R_S)\frac{g_0}{g_m}} \stackrel{R_S=0}{=} -\frac{g_{m1}}{g_{01}+g_{02}}$ \\
+	Verstärker mit parallelem Eingang (Push-Pull) & $a = \frac{g_{m-N1}+g_{m-P1}}{g_{0-N1}+g_{0-P1}} = -(g_{m-N1}+g_{m-P1}) \cdot (r_{DS-N1} || r_{DS-P1}) $ \\
+	Verstärker mit Stromumlenkung & $a \approx -a_i \frac{R_L || r_{DS3}}{R_S + \frac{1}{g_{m1}}}$ \\
+	Kaskode mit Widerstandslast & $a \approx -g_{m1} R_D$ \\
+	Kaskode mit Stromquellenlast & $a \approx -\frac{g_{m1}}{g_{03}}$ \\
+\end{tabular}
