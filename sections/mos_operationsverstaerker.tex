@@ -9,11 +9,12 @@
 	Operationsverstärkers\\
 	Leistungsstufe (Ausgangsstufe) & Impedanzwandler. Verstärkung ist selten
 	grösser als eins. Verkleinert den Ausgangswiderstand und stellt genügend
-	Ausgansstrom zur verfügung\\
+	Ausgansstrom zur Verfügung\\
 \end{tabular}
 
 \subsection{Schaltungsteile für MOS Operationsverstärker}
-\begin{figure}[h]
+
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{4cm}
 		\centering
@@ -37,7 +38,6 @@
 		{\input{tikz/mos_op_leistungsstufe}}
 		\caption{Leistungsstufe}
 	\end{subfigure}
-	\caption{Schaltungsteile}
 	\label{fig:Schaltungsteile}
 \end{figure}
 
@@ -51,7 +51,6 @@ Grenzwert bei starker Inversion & $a=V_A\sqrt{\frac{\beta}{I_Q}}$ (Bedingung:
 $a_{E_N}=a_{E_P}$)\\
 Grenzwert bei schwacher Inversion & $a=\frac{V_A}{2n_M\Phi_t}$\\
 Gain-Bandwith-Product & $GBP=|a|\cdot f_{P1}$ \\
-Slew-Rate & $SR=\frac{dv_o}{dt}=\frac{I_{out}}{C_L}$ \\
 Common mode rejection ratio & $CMRR=\left| \frac{a_{DM}}{a_{CM}}\right|$\\
 Power supply rejection ratio &
 $PSSR_+ = \left| \frac{a_{DM}}{a_{PS+}}\right|$ \newline
@@ -59,3 +58,21 @@ $PSSR_- = \left| \frac{a_{DM}}{a_{PS-}}\right|$ \\
 Offset: Designregel & Symmetrie, gleiche Stromdichten $\frac{I}{W/L}$ in
 allen Stromspiegeltransistoren. \\
 \end{tabular}
+
+\subsection{Slew-Rate}
+\begin{multicols}{2}
+\begin{tabularx}{0.95\linewidth}{Xl}
+	Definition Slew-Rate & $SR = \frac{d v_o}{dt} = \frac{I_{out}}{C_L}$ \\
+	Differenzstufe & $SR_r = |SR_f| = \frac{I_Q}{C_L}$ \\
+	Mit Verstärkung nach SR-dominanter Stufe & $|SR| = \frac{d v_{CL}}{dt} \cdot a$ \\
+\end{tabularx}
+
+\columnbreak
+
+\textbf{Vorgehen bei mehrstufigem Verstärker:}
+\begin{enumerate}
+	\item SR jeder einzelnen Verstärkerstufe untersuchen
+	\item SR auf den Ausgang beziehen ($\cdot a$)
+	\item Verstärkerstufe mit kleinster SR ist dominant.
+\end{enumerate}
+\end{multicols}
