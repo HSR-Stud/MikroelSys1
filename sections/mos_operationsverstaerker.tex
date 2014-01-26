@@ -61,14 +61,17 @@ Verstärkung Differenzstufe &
 Grenzwert bei starker Inversion & $a=V_A\sqrt{\frac{\beta}{I_Q}}$ (Bedingung:
 $a_{E_N}=a_{E_P}$)\\
 Grenzwert bei schwacher Inversion & $a=\frac{V_A}{2n_M\Phi_t}$\\
-Gain-Bandwith-Product & $GBP=|a|\cdot f_{P1}$ \\
-Common mode rejection ratio & $CMRR=\left| \frac{a_{DM}}{a_{CM}}\right|$\\
+Gain-Bandwith-Product & $GBP=|a|\cdot f_{P1} = -\frac{g_m}{2\pi C_L}$ \\
+Common mode rejection ratio & $CMRR=\left| \frac{a_{DM}}{a_{CM}}\right| = \frac{r_q}{r_s} = \frac{g_m}{g_{0b}}$ mit $r_q$: Innenwid. von $I_q$ \\
 Power supply rejection ratio &
 $PSSR_+ = \left| \frac{a_{DM}}{a_{PS+}}\right|$ \newline
 $PSSR_- = \left| \frac{a_{DM}}{a_{PS-}}\right|$ \\
 Offset: Designregel & Symmetrie, gleiche Stromdichten $\frac{I}{W/L}$ in
 allen Stromspiegeltransistoren. \\
 \end{tabular}
+
+%TODO: newpage entfernen
+\newpage
 
 \subsection{Slew-Rate}
 \begin{multicols}{2}

@@ -8,7 +8,7 @@
 \begin{enumerate}
 	\item Bestimmung ob weak, moderate oder strong inversion.
 	\item Berechnen der Sättigungsspannung.
-	\item Wenn $V_{DS} > V_{DS,sat}$, $\Rightarrow$ gesättigt.
+	\item Wenn $|V_{DS}| > |V_{DS,sat}|$ $\Rightarrow$ gesättigt.
 \end{enumerate}
 
 \begin{tabular}{|l|l|l|}
@@ -16,7 +16,7 @@
 	\textbf{Arbeitsbereich}	& \textbf{Bedingung}					& \textbf{Sättigungspannung}
 	\\ \hline
 	weak inversion			& $0 < V_{GS} < V_T - 60mV$				& $V_{DS,sat} \approx 5\Phi_t \approx 130mV \quad \text{(bei } T = 300K \text{)}$ \\
-	$I_D' < I_M'$			&										& $V_{GS} = V_{M} + h_{M} \cdot \Phi_t \cdot 																\ln{\frac{I_{D}}{\frac{W}{L} \cdot I_{M}}}$ 
+	$I_D' < I_M'$			&										& $V_{GS} = V_{M} + n_{M} \cdot \Phi_t \cdot 																\ln{\frac{I_{D}}{\frac{W}{L} \cdot I_{M}}}$ 
 	\\ \hline
 	moderate inversion		& $V_T - 60mV < V_{GS} < V_T + 160mV$	& \\
 	$I_M' < I_D' < I_H'$ 	& 										&
@@ -103,26 +103,26 @@ mit $I_D = \frac{W}{L} I_D'$ \hspace{5mm} und \hspace{5mm} $\Phi_t = \frac{kT}{e
 		\multicolumn{3}{|c|}{\textbf{n-Kanal Transistor}}
 	\\ \hline
 		EXP-Bereich \newline (weak inversion)
-		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}} (1-e^{\frac{-V_{DS}}{\Phi_t}}) (1 + \lambda V_{DS})$
-		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}} (1 + \lambda V_{DS})$
+		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}} (1-e^{\frac{-V_{DS}}{\Phi_t}}) \textcolor{HSRLakeGreen}{(1 + \lambda V_{DS})}$
+		& $I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}} \textcolor{HSRLakeGreen}{(1 + \lambda V_{DS})}$
 	\\ \hline
 		QUAD-Bereich \newline (strong inversion)
-		& $I_D = B [(V_{GS} - V_T) V_{DS} - \frac{V_{DS}^2}{2}] (1 + \lambda V_{DS})$
-		& $I_D = \frac{\beta}{2}(V_{GS} - V_T)^2 (1 + \lambda V_{DS})$
+		& $I_D = B [(V_{GS} - V_T) V_{DS} - \frac{V_{DS}^2}{2}] \textcolor{HSRLakeGreen}{(1 + \lambda V_{DS})}$
+		& $I_D = \frac{\beta}{2}(V_{GS} - V_T)^2 \textcolor{HSRLakeGreen}{(1 + \lambda V_{DS})}$
 	\\ \hline
 		\multicolumn{3}{|c|}{\textbf{p-Kanal Transistor}}
 	\\ \hline
 		EXP-Bereich \newline (weak inversion)
-		& $I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}} (1-e^{\frac{-V_{DS}}{\Phi_t}}) (1 - \lambda V_{DS})$
-		& $I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}} (1 - \lambda V_{DS})$
+		& $I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}} (1-e^{\frac{-V_{DS}}{\Phi_t}}) \textcolor{HSRLakeGreen}{(1 - \lambda V_{DS})}$
+		& $I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}} \textcolor{HSRLakeGreen}{(1 - \lambda V_{DS})}$
 	\\ \hline
 		QUAD-Bereich \newline (strong inversion)
-		& $I_D = -B [(V_{GS} - V_T) V_{DS} - \frac{V_{DS}^2}{2}] (1 - \lambda V_{DS})$
-		& $I_D = -\frac{\beta}{2}(V_{GS} - V_T)^2 (1 - \lambda V_{DS})$
+		& $I_D = -B [(V_{GS} - V_T) V_{DS} - \frac{V_{DS}^2}{2}] \textcolor{HSRLakeGreen}{(1 - \lambda V_{DS})}$
+		& $I_D = -\frac{\beta}{2}(V_{GS} - V_T)^2 \textcolor{HSRLakeGreen}{(1 - \lambda V_{DS})}$
 	\\ \hline
 \end{tabular} \\
 
-Wird die Kanallängenmodulation vernachlässigt, kann einfach der $(1 - \lambda V_{DS})$ Term weggelassen werden. \\
+Wird die Kanallängenmodulation vernachlässigt, kann einfach der $\textcolor{HSRLakeGreen}{(1 + \lambda V_{DS})}$ Term weggelassen werden. \\
 
 \subsection{Kleinsignal-Ersatzschaltbild}
 \begin{figure}[htbp]
@@ -152,7 +152,7 @@ Wird die Kanallängenmodulation vernachlässigt, kann einfach der $(1 - \lambda 
 		& Kanalwiderstand:
 	\\
 		& $r_{DS0} = \frac{dV_{DS}}{dI_D}|_{V_{DS}=0} = \frac{\Phi_t}{I_{D0}}$
-		& $r_{DS} = \frac{dV_{DS}}{dI_D} = \frac{V_A + V_{DS}}{I_D} \approx \frac{V_A}{I_D}$
+		& $r_{DS} = \frac{1}{g_0} = \frac{dV_{DS}}{dI_D} = \frac{V_A + V_{DS}}{I_D} \approx \frac{V_A}{I_D}$
 	\\ weak
 		& Kanalwiderstand bei $V_{DS} = 0V \dots V_{DS,sat}$:
 		& 
@@ -169,20 +169,23 @@ Wird die Kanallängenmodulation vernachlässigt, kann einfach der $(1 - \lambda 
 		& Kanalwiderstand bei $V_{DS}=0$:
 		& Kanalwiderstand:
 	\\
-		& $r_{DS0} = \frac{dV_{DS}}{dI_D}|_{V_{DS}=0} = \frac{1}{\beta (V_{GS} - V_T) (1 + \lambda V_{DS})}$
-		& $r_{DS} = \frac{dV_{DS}}{dI_D} = \frac{V_A + V_{DS}}{I_D} \approx \frac{V_A}{I_D}$
+		& $r_{DS0} = \frac{dV_{DS}}{dI_D}|_{V_{DS}=0} = \frac{1}{\beta (V_{GS} - V_T) \textcolor{HSRLakeGreen}{(1 + \lambda V_{DS})}}$
+		& $r_{DS} = \frac{1}{g_0} = \frac{dV_{DS}}{dI_D} = \frac{V_A + V_{DS}}{I_D} \approx \frac{V_A}{I_D}$
 	\\ strong
 		& Kanalwiderstand bei $V_{DS} = 0V \dots V_{DS,sat}$:
-		& $r_{DS} = \frac{dV_{DS}}{dI_D}|_{V_{DS}=0} = \frac{1}{\beta [(V_{GS} - V_T)-V_{DS}] (1 + \lambda V_{DS})}$
-	\\ \cline{2-3} inversion
+		& 
+	\\ inversion
+		& $r_{DS} = \frac{dV_{DS}}{dI_D} = \frac{1}{\beta [(V_{GS} - V_T)-V_{DS}] \textcolor{HSRLakeGreen}{(1 + \lambda V_{DS})}}$
+		& 
+	\\ \cline{2-3} 
 		& $g_m$ nicht benötigt
 		& Steilheit (zwei Formeln)
 	\\
 		&
-		& $g_m = \frac{dI_D}{V_{GS}} = \beta (V_{GS} - V_T) (1 + \lambda V_{DS})$
+		& $g_m = \frac{dI_D}{V_{GS}} = \beta (V_{GS} - V_T) \textcolor{HSRLakeGreen}{(1 + \lambda V_{DS})}$
 	\\
 		&
-		& $g_m = \frac{dI_D}{V_{GS}} = \sqrt{2 I_D \beta (1 + \lambda V_{DS})} $
+		& $g_m = \frac{dI_D}{V_{GS}} = \sqrt{2 I_D \beta \textcolor{HSRLakeGreen}{(1 + \lambda V_{DS})}} = \frac{2 I_D}{V_{GS} - V_T}$
 	\\ \hline
 \end{tabularx}
 
@@ -229,7 +232,7 @@ Wird die Kanallängenmodulation vernachlässigt, kann einfach der $(1 - \lambda 
 		\[
 			\lambda = \frac{1}{V_A} \approx \frac{1}{a_A L}
 		\]
-		Der MOS-Transistor wird vielfach mit $\lambda = 0$ idealisiert, was die Handrechnung vereinfacht.
+		Der MOS-Transistor wird vielfach mit $\textcolor{HSRLakeGreen}{\lambda = 0}$ idealisiert, was die Handrechnung vereinfacht.
 	\\ \hline
 		$B, \beta$ & Transkondukdanz &
 		Steilheit, Verstärkungsfaktor. Dieser Faktor ist im gesättigten und ungesättigten Betrieb \textbf{grundsätzlich verschieden}. Es gilt: $\beta = \frac{W}{L} \beta_0 = \frac{W}{L} \mu C_{ox}''$. 
