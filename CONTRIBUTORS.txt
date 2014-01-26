@@ -1,2 +1,3 @@
-Jürg Rast (jrast)
+﻿Jürg Rast (jrast)
 Gian Claudio Köppel (gkoeppel)
+Hannes Badertscher (hbaderts)
